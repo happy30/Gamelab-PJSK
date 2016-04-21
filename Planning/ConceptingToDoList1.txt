@@ -1,0 +1,31 @@
+WRITTEN CONCEPTS
+
+-Storyline(linear Quests etc.)
+-Characters(main & other story related)
+-Enemies(2 per area + final boss)
+-Side characters/NPCs(for Quests in limbo, travellers etc.)
+-All main areas and the goals in that Area(finding weapon, defeating boss)
+-Types of collectable items
+-All weapons and their stats 
+-World(map)
+-Extra assets for world/areas
+-Type of currency
+-Game controls(character controls,UI,UX,Quest,Inventory)
+-Mechanics(view,weapon equipping/cooldown,buying/selling,stat upgrades)
+
+
+
+
+CONCEPT ART
+-Characters(main & story related that have to be modeled)
+-Enemies
+-NPCs
+(ALSO: moves/attacks for each character)
+
+-collectable items
+-Weapons in 2D
+-World map
+-Various assets for each Area
+	-Shop
+	-Save points
+-UI (inventory, menus, map)
