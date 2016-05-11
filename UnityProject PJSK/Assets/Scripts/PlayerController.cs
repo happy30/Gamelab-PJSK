@@ -16,10 +16,14 @@ public class PlayerController : MonoBehaviour {
     RaycastHit hit;
     public float jumpHeight;
 
+    //Interacting
+    UIManager ui;
+
 
 	void Start ()
     {
         _rb = GetComponent<Rigidbody>();
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
 	}
 	
 
@@ -29,8 +33,39 @@ public class PlayerController : MonoBehaviour {
         speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
 
         //Can only move when we are not in a conversation
-        if(!inConversation)
+        if (!inConversation)
         {
+            //Check for interactable object
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 5))
+            {
+
+                if (hit.collider.tag == "Interact")
+                {
+                    ui.interactText.text = "Press Right Mouse Button to Interact";
+                    if (Input.GetButtonDown("Fire2"))
+                    {
+                        hit.collider.gameObject.GetComponent<InteractScript>().interacted = true;
+                    }
+                }
+            }
+            else
+            {
+                ui.interactText.text = "";
+            }
+
+            //Jumping
+            GameObject currentObject = Touching();
+            if (currentObject != null)
+            {
+                if (Input.GetButton("Jump"))
+                {
+                    if (currentObject.tag == "Ground")
+                    {
+                        _rb.velocity = new Vector3(0, jumpHeight, 0);
+                    }
+                }
+            }
+
             //Move the character if nothing is blocking our path
             movementVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
             if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.70f, transform.position.z), transform.forward, out hit, 0.65f))
@@ -43,22 +78,13 @@ public class PlayerController : MonoBehaviour {
                     }
                 }
             }
+
             transform.Translate(movementVelocity.x * Time.deltaTime, 0, movementVelocity.y * Time.deltaTime);
         }
-
-        //Jumping
-        GameObject currentObject = Touching();
-        if(currentObject != null)
+        else
         {
-            if (Input.GetButton("Jump"))
-            {
-                if(currentObject.tag == "Ground")
-                {
-                    _rb.velocity = new Vector3(0, jumpHeight, 0);
-                }
-            }
+            ui.interactText.text = "";
         }
-
 
     }
 

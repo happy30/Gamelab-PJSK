@@ -24,6 +24,7 @@ public class MouseLook : MonoBehaviour {
         else
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
