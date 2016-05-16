@@ -58,32 +58,25 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\EnemyClass.cs" />
     <Compile Include="Assets\Scripts\InteractScript.cs" />
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\ItemClass.cs" />
     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\PlaySoundAtPoint.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerSpawnLocator.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\UImanager.cs" />
+    <Compile Include="Assets\Scripts\StatsManager.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
