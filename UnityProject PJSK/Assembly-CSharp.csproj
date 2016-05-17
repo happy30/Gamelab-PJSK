@@ -45,14 +45,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\InteractScript.cs" />
      <Compile Include="Assets\Scripts\InventoryManager.cs" />
+=======
+     <Compile Include="Assets\Scripts\EnemyClass.cs" />
+     <Compile Include="Assets\Scripts\InteractScript.cs" />
+     <Compile Include="Assets\Scripts\InventoryManager.cs" />
+     <Compile Include="Assets\Scripts\ItemClass.cs" />
+>>>>>>> bd0e4d782a1f57419064be43994e13c752dfcb62
      <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\PlaySoundAtPoint.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\QuestManager.cs" />
+=======
+     <Compile Include="Assets\Scripts\PickUpScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerSpawnLocator.cs" />
+     <Compile Include="Assets\Scripts\QuestManager.cs" />
+     <Compile Include="Assets\Scripts\StatsManager.cs" />
+>>>>>>> bd0e4d782a1f57419064be43994e13c752dfcb62
      <Compile Include="Assets\Scripts\UImanager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
