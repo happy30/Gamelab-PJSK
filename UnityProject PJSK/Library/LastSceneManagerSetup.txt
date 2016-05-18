@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/happiScene.unity
+- path: Assets/Scenes/Peetsjcene.unity
   isLoaded: 1
   isActive: 1
