@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Peetsjcene.unity
-=======
-- path: Assets/Scenes/SaschaScene.unity
->>>>>>> 508ddb57a3a1a43d321e9605cc9c0e5567edb8dc
   isLoaded: 1
   isActive: 1
