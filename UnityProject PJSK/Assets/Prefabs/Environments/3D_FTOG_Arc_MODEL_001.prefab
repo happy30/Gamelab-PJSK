@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 449644}
   - 33: {fileID: 3332292}
   - 23: {fileID: 2332202}
+  - 65: {fileID: 6557654}
   m_Layer: 0
   m_Name: 3D_FTOG_Arc_MODEL_001
   m_TagString: Untagged
@@ -62,6 +63,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146658}
   m_Mesh: {fileID: 4300000, guid: 1efe8589c7c71524a8a0c53b335e17b4, type: 3}
+--- !u!65 &6557654
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7373784, y: 7.2822676, z: 2.4867492}
+  m_Center: {x: 0, y: -0.016313914, z: 1.2433765}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
