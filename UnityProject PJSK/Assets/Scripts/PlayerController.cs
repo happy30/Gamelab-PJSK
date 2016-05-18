@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     public Vector2 movementVelocity;
 
     public bool inConversation;
+    public StatsManager stats;
 
     //Jumping
     Rigidbody _rb;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 	void Start ()
     {
         _rb = GetComponent<Rigidbody>();
+        stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
         ui = GameObject.Find("Canvas").GetComponent<UIManager>();
 	}
 	
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour {
     {
         //Change speed to runspeed if Shift is pressed
         speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        speed *= stats.moveSpeedMultiplier;
 
         //Can only move when we are not in a conversation
         if (!inConversation)
