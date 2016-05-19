@@ -18,7 +18,7 @@ public class EnemyBehaviour : MonoBehaviour {
     public int health;
     public float aggroRange;
 
-    public Transform[] waypoints;
+    public GameObject[] waypoints;
 
     public EnemyState enemyState;
 
