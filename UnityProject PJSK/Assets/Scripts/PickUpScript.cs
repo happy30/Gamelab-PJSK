@@ -25,7 +25,7 @@ public class PickUpScript : MonoBehaviour {
             }
             if (piggies != 0)
             {
-                inv.piggies += piggies;
+                inv.changePiggies(piggies);
                 Destroy(gameObject);
             }
         }
