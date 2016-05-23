@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/happiscene2.unity
+=======
+- path: Assets/Scenes/Peetsjcene.unity
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
   isLoaded: 1
   isActive: 1

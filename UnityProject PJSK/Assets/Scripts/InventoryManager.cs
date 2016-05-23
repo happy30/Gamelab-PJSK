@@ -23,6 +23,6 @@ public class InventoryManager : MonoBehaviour
 
     public void changePiggies(int amount)
     {
-        piggies = -amount;
+        piggies += amount;
     }
 }

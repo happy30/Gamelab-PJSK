@@ -1,8 +1,17 @@
 5.3.4f1:2.2.0.0
 StandaloneWindows
+<<<<<<< HEAD
 C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll
 C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
 C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll
 C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll
 C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll
+=======
+D:/UNART STUFF/PROGRAMS/Editor/Data/Managed/UnityEngine.dll
+D:/UNART STUFF/PROGRAMS/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+D:/UNART STUFF/PROGRAMS/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
+D:/UNART STUFF/PROGRAMS/Editor/Data/Managed/UnityEditor.dll
+D:/UNART STUFF/PROGRAMS/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll
+D:/UNART STUFF/PROGRAMS/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
