@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/Scenes/SaschaScene.unity
+  isLoaded: 1
+  isActive: 1
