@@ -405,11 +405,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   approachSpeed: 0
-  attackPower: 0
+  attackPower: 10
   health: 0
   aggroRange: 0
-  attackRange: 4.5
-  spawnTime: 0
+  attackRange: 4.6
+  walkTime: 5
+  attackTime: 1
   waypoints:
   - {fileID: 827251761}
   - {fileID: 340928611}
@@ -417,6 +418,7 @@ MonoBehaviour:
   - {fileID: 970661814}
   - {fileID: 1754369043}
   player: {fileID: 1319228833}
+  playerhealth: 100
   enemyState: 0
 --- !u!23 &800501716
 MeshRenderer:

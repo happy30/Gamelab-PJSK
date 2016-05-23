@@ -21,11 +21,13 @@ public class EnemyBehaviour : MonoBehaviour
 
     int currentWaypoint;
     float time;
-    public float spawnTime;
+    public float walkTime;
+    public float attackTime;
     public Transform[] waypoints;
     public GameObject player;
     NavMeshAgent nav;
     bool playerDead;
+    public int playerhealth;
     public EnemyState enemyState;
 
     // Use this for initialization
@@ -53,7 +55,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             nav.SetDestination(waypoints[currentWaypoint].position);
             time += Time.deltaTime;
-            if (time >= spawnTime)
+            if (time >= walkTime)
             {
                 currentWaypoint = Random.Range(0, 4);
                 time = 0;
@@ -69,8 +71,18 @@ public class EnemyBehaviour : MonoBehaviour
             if (aggroRange <= attackRange)
             {
                 nav.enabled = false;
+                time += Time.deltaTime;
+                if (time >= attackTime)
+                {
+                    playerhealth -= attackPower;
+                    time = 0;
+                }
             }
             else nav.enabled = true;
+        }
+        if (playerhealth <= 0)
+        {
+            enemyState = EnemyState.Idle;
         }
     }
 
