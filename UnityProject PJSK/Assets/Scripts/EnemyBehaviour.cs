@@ -17,13 +17,17 @@ public class EnemyBehaviour : MonoBehaviour
     public int attackPower;
     public int health;
     public float aggroRange;
+    public float attackRange;
 
     int currentWaypoint;
     float time;
-    public float restartTime;
+    public float walkTime;
+    public float attackTime;
     public Transform[] waypoints;
+    public GameObject player;
     NavMeshAgent nav;
-
+    bool playerDead;
+    public int playerhealth;
     public EnemyState enemyState;
 
     // Use this for initialization
@@ -36,17 +40,59 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if (time >= restartTime)
+        aggroRange = Vector3.Distance(player.transform.position, transform.position);
+        if (playerDead == true)
         {
-            currentWaypoint = Random.Range (0,4);
-            time = 0;
+            enemyState = EnemyState.Idle;
+        }
+
+        if (enemyState == EnemyState.Idle)
+        {
+            nav.enabled = false;
         }
 
         if (enemyState == EnemyState.Wandering)
         {
             nav.SetDestination(waypoints[currentWaypoint].position);
+            time += Time.deltaTime;
+            if (time >= walkTime)
+            {
+                currentWaypoint = Random.Range(0, 4);
+                time = 0;
+            }
         }
 
+        if (enemyState == EnemyState.Attacking)
+        {
+            if (nav.enabled == true)
+            {
+                nav.SetDestination(player.transform.position);
+            }
+            if (aggroRange <= attackRange)
+            {
+                nav.enabled = false;
+                time += Time.deltaTime;
+                if (time >= attackTime)
+                {
+                    playerhealth -= attackPower;
+                    time = 0;
+                }
+            }
+            else nav.enabled = true;
+        }
+        if (playerhealth <= 0)
+        {
+            enemyState = EnemyState.Idle;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            player = other.gameObject;
+            enemyState = EnemyState.Attacking;
+        }
+        else enemyState = EnemyState.Wandering;
     }
 }
