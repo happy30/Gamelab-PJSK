@@ -25,9 +25,9 @@ public class EnemyBehaviour : MonoBehaviour
     public float attackTime;
     public Transform[] waypoints;
     public GameObject player;
+    public GameObject loot;
+    public int playerHealth;
     NavMeshAgent nav;
-    bool playerDead;
-    public int playerhealth;
     public EnemyState enemyState;
 
     // Use this for initialization
@@ -41,10 +41,6 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         aggroRange = Vector3.Distance(player.transform.position, transform.position);
-        if (playerDead == true)
-        {
-            enemyState = EnemyState.Idle;
-        }
 
         if (enemyState == EnemyState.Idle)
         {
@@ -74,15 +70,16 @@ public class EnemyBehaviour : MonoBehaviour
                 time += Time.deltaTime;
                 if (time >= attackTime)
                 {
-                    playerhealth -= attackPower;
+                    playerHealth -= attackPower;
                     time = 0;
                 }
             }
             else nav.enabled = true;
         }
-        if (playerhealth <= 0)
+        if (health <= 0)
         {
-            enemyState = EnemyState.Idle;
+            Instantiate(loot,transform.position,Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
@@ -93,6 +90,5 @@ public class EnemyBehaviour : MonoBehaviour
             player = other.gameObject;
             enemyState = EnemyState.Attacking;
         }
-        else enemyState = EnemyState.Wandering;
     }
 }
