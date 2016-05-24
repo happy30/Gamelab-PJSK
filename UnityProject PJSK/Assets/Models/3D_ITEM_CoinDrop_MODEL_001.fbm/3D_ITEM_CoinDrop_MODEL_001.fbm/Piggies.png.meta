@@ -1,11 +1,21 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+guid: f2d825221de9b044782b0ff8d0a00722
+timeCreated: 1463658198
+=======
+<<<<<<< HEAD
+guid: 3a845235bc14d5c4996805475b5244a9
+timeCreated: 1463650328
+=======
+<<<<<<< HEAD
 guid: c1623807517ba5449ab323c34a966527
 timeCreated: 1463678793
 =======
 guid: 477e7783927460c478eddfeeaf62ea6f
 timeCreated: 1463668180
 >>>>>>> b54c2eb87af5770813ed1829ac3dfb0560a15071
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -22,13 +32,29 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
+<<<<<<< HEAD
     heightScale: 0.25
+=======
+<<<<<<< HEAD
+    heightScale: .25
+=======
+    heightScale: 0.25
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
+<<<<<<< HEAD
   cubemapConvolutionSteps: 7
+=======
+<<<<<<< HEAD
+  cubemapConvolutionSteps: 8
+=======
+  cubemapConvolutionSteps: 7
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
@@ -47,7 +73,15 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
+<<<<<<< HEAD
   spritePivot: {x: 0.5, y: 0.5}
+=======
+<<<<<<< HEAD
+  spritePivot: {x: .5, y: .5}
+=======
+  spritePivot: {x: 0.5, y: 0.5}
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
@@ -55,7 +89,14 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites: []
+<<<<<<< HEAD
     outline: []
+=======
+<<<<<<< HEAD
+=======
+    outline: []
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
   spritePackingTag: 
   userData: 
   assetBundleName: 

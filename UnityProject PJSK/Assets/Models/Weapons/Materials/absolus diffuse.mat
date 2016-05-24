@@ -90,7 +90,15 @@ Material:
       data:
         first:
           name: _Cutoff
+<<<<<<< HEAD
         second: 0.5
+=======
+<<<<<<< HEAD
+        second: .5
+=======
+        second: 0.5
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
       data:
         first:
           name: _ZWrite
@@ -98,7 +106,15 @@ Material:
       data:
         first:
           name: _Glossiness
+<<<<<<< HEAD
         second: 0.5
+=======
+<<<<<<< HEAD
+        second: .5
+=======
+        second: 0.5
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
       data:
         first:
           name: _Metallic
@@ -110,7 +126,15 @@ Material:
       data:
         first:
           name: _Parallax
+<<<<<<< HEAD
         second: 0.02
+=======
+<<<<<<< HEAD
+        second: .0199999996
+=======
+        second: 0.02
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
       data:
         first:
           name: _OcclusionStrength
@@ -135,4 +159,12 @@ Material:
       data:
         first:
           name: _Color
+<<<<<<< HEAD
         second: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+=======
+<<<<<<< HEAD
+        second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
+=======
+        second: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+>>>>>>> 1d8be23cfd6dee560514ecce607f8a62a05e0dc4
+>>>>>>> 763be8bdfb948708a2c156c60b4a866a3bff8edf
