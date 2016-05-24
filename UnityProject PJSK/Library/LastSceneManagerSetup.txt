@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/happiscene2.unity
-=======
-- path: Assets/Scenes/World.unity
->>>>>>> b1ca7dccb5b4e1c8383f2057bc42ff6c09538f59
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
