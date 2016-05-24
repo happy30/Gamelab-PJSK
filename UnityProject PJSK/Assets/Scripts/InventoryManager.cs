@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
     public List <ItemClass> inventory = new List <ItemClass>();
-    int inventorySpace;
+
     public int inventorySize;
     public int piggies;
 
