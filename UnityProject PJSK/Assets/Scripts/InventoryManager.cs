@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class InventoryManager : MonoBehaviour
 {
     public List <ItemClass> inventory = new List <ItemClass>();
