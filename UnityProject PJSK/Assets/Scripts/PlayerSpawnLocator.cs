@@ -15,7 +15,6 @@ public class PlayerSpawnLocator : MonoBehaviour
     public Vector3[] spawnLocations;
     public GameObject player;
     public Vector3 currentLocation;
-
     public LoadController load;
 
     void Start()
