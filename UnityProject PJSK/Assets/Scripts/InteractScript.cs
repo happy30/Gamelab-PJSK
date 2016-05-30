@@ -21,4 +21,11 @@ public class InteractScript : MonoBehaviour {
             player.inConversation = true;
         }
 	}
+
+    public void closeInteraction()
+    {
+        player.inConversation = false;
+        interacted = false;
+    }
+    
 }
