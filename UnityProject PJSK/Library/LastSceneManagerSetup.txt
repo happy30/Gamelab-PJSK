@@ -1,8 +1,1 @@
-<<<<<<< HEAD
 sceneSetups: []
-=======
-sceneSetups:
-- path: Assets/Scenes/SaschaScene.unity
-  isLoaded: 1
-  isActive: 1
->>>>>>> 74c1ad4ec5b74a3618a80f224a9295f16f237bcb
