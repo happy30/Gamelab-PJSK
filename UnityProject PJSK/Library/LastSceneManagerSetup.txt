@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 sceneSetups:
 - path: Assets/Scenes/happiscene2.unity
+=======
+sceneSetups: []
+<<<<<<< HEAD
+=======
+=======
+sceneSetups:
+- path: Assets/Scenes/World.unity
+>>>>>>> 8646ff703065615f7786da3b46eb574be76925ad
   isLoaded: 1
   isActive: 1
+>>>>>>> 74c1ad4ec5b74a3618a80f224a9295f16f237bcb
+>>>>>>> 9a91e92a71f804553baff98e630f14460d116f4a
