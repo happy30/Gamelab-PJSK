@@ -13,6 +13,8 @@ GameObject:
   - 114: {fileID: 11466168}
   - 114: {fileID: 11479896}
   - 114: {fileID: 11433480}
+  - 114: {fileID: 11403224}
+  - 114: {fileID: 11426844}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -29,9 +31,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11403224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c93e934d71513c45ba317dedfdf1932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingInterface: {fileID: 0}
+  xPos: 0
+  fox: {fileID: 0}
 --- !u!114 &11403326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43,6 +60,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c600f76d9c064b947af5e8707928b5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11426844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a85144b36a6016498c1d7fc7c2e6bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDatabase:
+  - itemID: 0
+    itemName: Potion
+    consumable: 1
+    sellable: 1
+    buyPrice: 10
+    sellPrice: 5
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+  - itemID: 0
+    itemName: 
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
 --- !u!114 &11433480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbfd05b4902389b49920c1e5f2ab2091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quests: []
+  inventory: {fileID: 0}
 --- !u!114 &11479896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +174,10 @@ MonoBehaviour:
   maxHealth: 0
   attackPower: 0
   moveSpeedMultiplier: 1
+  unlockedCheckpoints: 
+  inventory: {fileID: 0}
+  spawn: {fileID: 0}
+  quests: {fileID: 0}
 --- !u!114 &11498974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,6 +189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a9f06a5052ef64a9bab194cdf75257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPoint: 0
+  spawnLocations: []
+  player: {fileID: 0}
+  currentLocation: {x: 0, y: 0, z: 0}
+  load: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

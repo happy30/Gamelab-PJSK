@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
     public List <ItemClass> inventory = new List <ItemClass>();
+    public List <GameObject> weapons = new List<GameObject>();
 
     public int inventorySize;
     public int piggies;
