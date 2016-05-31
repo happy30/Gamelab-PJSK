@@ -1,7 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityProject PJSK.CSharp", "UnityProject PJSK.CSharp.csproj", "{ED5EF550-6EED-2E3A-6D20-17BD1A61416B}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{91E4424F-54B7-400A-D48D-3B09018B21AC}") = "UnityProject PJSK", "Assembly-CSharp.csproj", "{9AE5EAF0-A710-F632-4331-72474F1B24E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,21 +9,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED5EF550-6EED-2E3A-6D20-17BD1A61416B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED5EF550-6EED-2E3A-6D20-17BD1A61416B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED5EF550-6EED-2E3A-6D20-17BD1A61416B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED5EF550-6EED-2E3A-6D20-17BD1A61416B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE5EAF0-A710-F632-4331-72474F1B24E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE5EAF0-A710-F632-4331-72474F1B24E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE5EAF0-A710-F632-4331-72474F1B24E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE5EAF0-A710-F632-4331-72474F1B24E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-=======
 					GlobalSection(MonoDevelopProperties) = preSolution
 =======
 	GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> b77e793b6ff9818f43072f4090667db853d8104d
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
->>>>>>> 74c1ad4ec5b74a3618a80f224a9295f16f237bcb
 EndGlobal
