@@ -374,6 +374,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11479896, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
+      propertyPath: unlockedCheckpoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 469220, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -513,24 +517,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e262dd040ec03a43b298a1278cc3b77, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &545283405 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 157108, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-  m_PrefabInternal: {fileID: 390026861}
---- !u!114 &545283406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 545283405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c93e934d71513c45ba317dedfdf1932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadingInterface: {fileID: 0}
-  xPos: 0
-  fox: {fileID: 0}
 --- !u!1 &600004860
 GameObject:
   m_ObjectHideFlags: 0
