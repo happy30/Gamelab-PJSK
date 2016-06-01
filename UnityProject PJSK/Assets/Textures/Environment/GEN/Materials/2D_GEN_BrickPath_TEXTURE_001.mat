@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 2D_GEN_Grass_TEXTURE_001
+  m_Name: 2D_GEN_BrickPath_TEXTURE_001
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
@@ -19,14 +19,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 4883340d947e60444a72b11e7d7381d2, type: 3}
+          m_Texture: {fileID: 2800000, guid: 98b0e646c5b9146419d8e20195767962, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 263ee4a6f07bbe74d87fb6160c5cf108, type: 3}
+          m_Texture: {fileID: 2800000, guid: cae24c6b7033dcd488d9ed31803fa7af, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
