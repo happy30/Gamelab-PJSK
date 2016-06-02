@@ -1,20 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/SaschaScene.unity
-=======
-<<<<<<< HEAD
 - path: Assets/Scenes/Lyndor.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/World.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/SaschaScene.unity
-=======
-- path: Assets/Scenes/Peetsjcene.unity
->>>>>>> 63f138aa205197da25cbafa2f183860544e368c1
->>>>>>> b77e793b6ff9818f43072f4090667db853d8104d
->>>>>>> 744b36269b35b1678d9a79c8c4c47b68588abb44
->>>>>>> 488032e4f298443936f2789fc7c878117dd19239
   isLoaded: 1
   isActive: 1
