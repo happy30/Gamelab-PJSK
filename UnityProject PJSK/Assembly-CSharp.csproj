@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\InteractScript.cs" />
      <Compile Include="Assets\Scripts\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\ItemClass.cs" />
+     <Compile Include="Assets\Scripts\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\CreditsManager.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
