@@ -5,6 +5,7 @@ public class InteractScript : MonoBehaviour {
 
     public bool interacted;
     public PlayerController player;
+    public string interactText;
 
 	// Use this for initialization
 	void Start ()
@@ -21,6 +22,15 @@ public class InteractScript : MonoBehaviour {
             player.inConversation = true;
         }
 	}
+
+    public void Interact()
+    {
+        interacted = true;
+        if(GetComponent<ConversationSystem>() != null)
+        {
+            GetComponent<ConversationSystem>().Activate();
+        }
+    }
 
     public void closeInteraction()
     {

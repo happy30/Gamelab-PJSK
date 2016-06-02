@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BGMPlayer.cs" />
+    <Compile Include="Assets\Scripts\ConversationSystem.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\EnemyClass.cs" />
     <Compile Include="Assets\Scripts\FastTravelSafeManager.cs" />

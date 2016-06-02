@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 
     //Interacting
     UIManager ui;
+    public ConversationSystem conversation;
 
 
 	void Start ()
@@ -44,16 +45,25 @@ public class PlayerController : MonoBehaviour {
 
                 if (hit.collider.tag == "Interact")
                 {
-                    ui.interactText.text = "Press Right Mouse Button to Interact";
+                    ui.interactText.text = hit.collider.gameObject.GetComponent<InteractScript>().interactText;
+                    ui.rmbSprite.SetActive(true);
                     if (Input.GetButtonDown("Fire2"))
                     {
-                        hit.collider.gameObject.GetComponent<InteractScript>().interacted = true;
+                        if (!hit.collider.gameObject.GetComponent<InteractScript>().interacted)
+                        {
+                            hit.collider.gameObject.GetComponent<InteractScript>().Interact();
+                            if(hit.collider.gameObject.GetComponent<ConversationSystem>() != null)
+                            {
+                                conversation = hit.collider.gameObject.GetComponent<ConversationSystem>();
+                            }
+                        }
                     }
                 }
             }
             else
             {
                 ui.interactText.text = "";
+                ui.rmbSprite.SetActive(false);
             }
 
             //Jumping
@@ -87,6 +97,7 @@ public class PlayerController : MonoBehaviour {
         else
         {
             ui.interactText.text = "";
+            ui.rmbSprite.SetActive(false);
         }
 
     }
