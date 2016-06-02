@@ -1,10 +1,4 @@
-sceneSetups: []
-<<<<<<< HEAD
-=======
-=======
 sceneSetups:
-- path: Assets/Scenes/World.unity
+- path: Assets/Scenes/Peetsjcene.unity
   isLoaded: 1
   isActive: 1
->>>>>>> 74c1ad4ec5b74a3618a80f224a9295f16f237bcb
->>>>>>> 9a91e92a71f804553baff98e630f14460d116f4a
