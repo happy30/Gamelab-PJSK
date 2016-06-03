@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour {
 
             //Move the character if nothing is blocking our path
             movementVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
-            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.70f, transform.position.z), transform.forward, out hit, 0.65f))
+            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), transform.forward, out hit, 0.65f))
             {
                 if (hit.collider.tag == "Ground")
                 {
