@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawnLocator : MonoBehaviour
 {
     public enum SpawnPoint
     {
         HubTown,
-        Field,
         Lyndor,
+        Field,
         Castle
     };
 
@@ -16,26 +17,40 @@ public class PlayerSpawnLocator : MonoBehaviour
     public GameObject player;
     public Vector3 currentLocation;
     public LoadController load;
+    public UIManager ui;
 
     void Start()
     {
         player = GameObject.Find("Player");
         load = GetComponent<LoadController>();
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     // use this function for fasttravel, or on death. On death use FastTravel(PlayerSpawnLocator.spawnPoint or else you will always respawn to hub.)
-    public void FastTravel(SpawnPoint point)
+    public void FastTravel(int point)
     {
-        if(point == SpawnPoint.Lyndor)
+        if (point == (int)SpawnPoint.Lyndor)
         {
-            load.LoadLevel("Lyndor");
+            if (SceneManager.GetActiveScene().name != "Lyndor")
+            {
+                load.LoadScene("Lyndor");
+            }
+            else
+            {
+                currentLocation = spawnLocations[(int)point];
+                player.transform.position = currentLocation;
+            }
         }
-        else if(point == SpawnPoint.Castle)
+        else
         {
-            load.LoadLevel("Castle");
+            if (SceneManager.GetActiveScene().name != "happiWorld")
+            {
+                load.LoadScene("happiWorld");
+            }
+            currentLocation = spawnLocations[(int)point];
+            player.transform.position = currentLocation;
         }
-        currentLocation = spawnLocations[(int)point];
-        player.transform.position = currentLocation;
+        ui.closeFastTravelSaveMenu();
     }
-
+    
 }
