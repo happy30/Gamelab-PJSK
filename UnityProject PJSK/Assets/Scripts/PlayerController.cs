@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 
     //Interacting
     UIManager ui;
+    public ConversationSystem conversation;
 
 
 	void Start ()
@@ -44,16 +45,25 @@ public class PlayerController : MonoBehaviour {
 
                 if (hit.collider.tag == "Interact")
                 {
-                    ui.interactText.text = "Press Right Mouse Button to Interact";
+                    ui.interactText.text = hit.collider.gameObject.GetComponent<InteractScript>().interactText;
+                    ui.rmbSprite.SetActive(true);
                     if (Input.GetButtonDown("Fire2"))
                     {
-                        hit.collider.gameObject.GetComponent<InteractScript>().interacted = true;
+                        if (!hit.collider.gameObject.GetComponent<InteractScript>().interacted)
+                        {
+                            hit.collider.gameObject.GetComponent<InteractScript>().Interact();
+                            if(hit.collider.gameObject.GetComponent<ConversationSystem>() != null)
+                            {
+                                conversation = hit.collider.gameObject.GetComponent<ConversationSystem>();
+                            }
+                        }
                     }
                 }
             }
             else
             {
                 ui.interactText.text = "";
+                ui.rmbSprite.SetActive(false);
             }
 
             //Jumping
@@ -71,7 +81,7 @@ public class PlayerController : MonoBehaviour {
 
             //Move the character if nothing is blocking our path
             movementVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
-            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.70f, transform.position.z), transform.forward, out hit, 0.65f))
+            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), transform.forward, out hit, 0.65f))
             {
                 if (hit.collider.tag == "Ground")
                 {
@@ -87,6 +97,7 @@ public class PlayerController : MonoBehaviour {
         else
         {
             ui.interactText.text = "";
+            ui.rmbSprite.SetActive(false);
         }
 
     }

@@ -1,0 +1,57 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class BGMPlayer : MonoBehaviour {
+
+    public AudioClip[] BGM;
+    public AudioSource sound;
+    public float audioVolume;
+
+    public bool fading;
+
+	public enum CurrentlyPlaying
+    {
+        HubTown,
+        Field,
+        Forest,
+        Temple,
+        Castle,
+        FinalBattle,
+        Lyndor,
+        Conversation
+    };
+
+    public CurrentlyPlaying currentlyPlaying;
+    public CurrentlyPlaying nextPlaying;
+
+    void Start()
+    {
+        sound = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if(fading)
+        {
+            FadeOut();
+        }
+    }
+
+    public void changeBGM(CurrentlyPlaying state)
+    {
+        fading = true;
+        nextPlaying = state;
+    }
+
+    public void FadeOut()
+    {
+        sound.volume -= 2f * Time.deltaTime;
+        if(sound.volume < 0.1f)
+        {
+            sound.clip = BGM[(int)nextPlaying];
+            sound.volume = audioVolume;
+            fading = false;
+            sound.Play();
+        }
+    }
+}

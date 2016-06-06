@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/SaschaScene.unity
+- path: Assets/Scenes/Lyndor.unity
   isLoaded: 1
   isActive: 1
