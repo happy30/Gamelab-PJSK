@@ -1827,7 +1827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 312
+  m_RootOrder: 309
 --- !u!1001 &189449259
 Prefab:
   m_ObjectHideFlags: 0
@@ -3727,13 +3727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14c77e6ba925534a9438773ec6f0f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  rmbSprite: {fileID: 18587052}
-  interactText: {fileID: 1699577391}
-  chatPanel: {fileID: 678627621}
-  npcNameText: {fileID: 463306713}
-  npcChatText: {fileID: 1944053372}
-  questButtons: {fileID: 285385509}
 --- !u!114 &364870245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13816,7 +13809,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 74
+  m_RootOrder: 77
 --- !u!1001 &1367307945
 Prefab:
   m_ObjectHideFlags: 0
@@ -15324,6 +15317,10 @@ Prefab:
       propertyPath: runSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11456258, guid: d2d0df81a5430c740a99a027ae843abc, type: 2}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1570641508}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2d0df81a5430c740a99a027ae843abc, type: 2}
   m_IsPrefabParent: 0
@@ -16613,6 +16610,12 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 1c91fa5e0f526eb4b98f85c7399a296e, type: 3}
+--- !u!114 &1570641508 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11479896, guid: c75f7aa350a655c49af93148db4ca519,
+    type: 2}
+  m_PrefabInternal: {fileID: 1541766381}
+  m_Script: {fileID: 11500000, guid: 909c42263c3f2ce479dbbc4520a9a451, type: 3}
 --- !u!1001 &1573633429
 Prefab:
   m_ObjectHideFlags: 0
