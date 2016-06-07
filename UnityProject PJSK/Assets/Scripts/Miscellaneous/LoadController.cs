@@ -21,6 +21,7 @@ public class LoadController : MonoBehaviour {
     {
         async = SceneManager.LoadSceneAsync(level);
         yield return async;
+        loadingInterface.SetActive(false);
     }
 
     internal void LoadScene(object mainMenu)
