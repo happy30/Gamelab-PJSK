@@ -11,6 +11,7 @@ GameObject:
   - 193: {fileID: 19397188}
   - 33: {fileID: 3321176}
   - 23: {fileID: 2333782}
+  - 136: {fileID: 13623550}
   m_Layer: 0
   m_Name: 3D_GEN_Tree_PREFAB_005
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 197.28949, y: 0, z: 21.999876}
+  m_LocalPosition: {x: 417.8453, y: 10.495853, z: 367.34653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,6 +65,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 193746}
   m_Mesh: {fileID: 4306978, guid: cd70b9f26c529a34dbb66c16bd9f96c4, type: 2}
+--- !u!136 &13623550
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 4.9
+  m_Height: 55.174957
+  m_Direction: 1
+  m_Center: {x: 0.06, y: 25.02, z: -0.35}
 --- !u!193 &19397188
 Tree:
   m_ObjectHideFlags: 1

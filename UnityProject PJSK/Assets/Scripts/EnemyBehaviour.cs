@@ -92,7 +92,7 @@ public class EnemyBehaviour : MonoBehaviour
             }
             else
             {
-                spawnedLoot.GetComponent<PickUpScript>().item = 
+                //spawnedLoot.GetComponent<PickUpScript>().item = 
             }
 
             Destroy(gameObject);
