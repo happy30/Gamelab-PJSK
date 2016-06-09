@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour {
     //Questbuttons
     public GameObject questButtons;
 
+    //FastTravelSaveManager
+    public GameObject fastTravelSaveUI;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -39,5 +42,11 @@ public class UIManager : MonoBehaviour {
     public void declineButton()
     {
         player.conversation.DeActivate();
+    }
+
+    public void closeFastTravelSaveMenu()
+    {
+        fastTravelSaveUI.SetActive(false);
+        player.interactedObject.closeInteraction();
     }
 }

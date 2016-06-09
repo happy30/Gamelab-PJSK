@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     //Interacting
     UIManager ui;
     public ConversationSystem conversation;
+    public InteractScript interactedObject;
 
 
 	void Start ()
@@ -51,7 +52,8 @@ public class PlayerController : MonoBehaviour {
                     {
                         if (!hit.collider.gameObject.GetComponent<InteractScript>().interacted)
                         {
-                            hit.collider.gameObject.GetComponent<InteractScript>().Interact();
+                            interactedObject = hit.collider.gameObject.GetComponent<InteractScript>();
+                            interactedObject.Interact();
                             if(hit.collider.gameObject.GetComponent<ConversationSystem>() != null)
                             {
                                 conversation = hit.collider.gameObject.GetComponent<ConversationSystem>();
