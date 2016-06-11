@@ -1670,10 +1670,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65bb189839b7a2f4b9741a55e80fd5b5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &147704029 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 109350, guid: 92854cf3811ad8b48b9c65bb37666118, type: 2}
-  m_PrefabInternal: {fileID: 629500256}
 --- !u!1001 &153047788
 Prefab:
   m_ObjectHideFlags: 0
@@ -1980,7 +1976,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 328
+  m_RootOrder: 329
 --- !u!1001 &189449259
 Prefab:
   m_ObjectHideFlags: 0
@@ -5350,7 +5346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 44
 --- !u!1001 &441121131
 Prefab:
   m_ObjectHideFlags: 0
@@ -6037,7 +6033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interact: {fileID: 0}
-  FastTravelSafeManagerUI: {fileID: 147704029}
+  fastTravelSafeManagerUI: {fileID: 0}
   stats: {fileID: 0}
   location: 1
 --- !u!114 &539087471
@@ -14475,7 +14471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 93
+  m_RootOrder: 94
 --- !u!1001 &1367307945
 Prefab:
   m_ObjectHideFlags: 0

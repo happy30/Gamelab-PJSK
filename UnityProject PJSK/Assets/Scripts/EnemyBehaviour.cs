@@ -19,20 +19,27 @@ public class EnemyBehaviour : MonoBehaviour
     public float aggroRange;
     public float attackRange;
 
+    public int minPiggyDrop;
+    public int maxPiggyDrop;
+
     int currentWaypoint;
+    public ParticleSystem hurtParticles;
     float time;
     public float walkTime;
     public float attackTime;
     public Transform[] waypoints;
     public GameObject player;
     public GameObject loot;
-    public int playerHealth;
+    public GameObject spawnedLoot;
+    public ItemClass questItem;
+    int playerHealth;
     NavMeshAgent nav;
     public EnemyState enemyState;
 
     // Use this for initialization
     void Start()
     {
+        playerHealth = GameObject.Find("GameManager").GetComponent<StatsManager>().health;
         currentWaypoint = 0;
         nav = GetComponent<NavMeshAgent>();
     }
@@ -78,7 +85,16 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if (health <= 0)
         {
-            Instantiate(loot,transform.position,Quaternion.identity);
+            spawnedLoot = (GameObject)Instantiate(loot, transform.position, Quaternion.identity);
+            if (maxPiggyDrop != 0)
+            {
+                spawnedLoot.GetComponent<PickUpScript>().piggies = (Random.Range(minPiggyDrop, maxPiggyDrop));
+            }
+            else
+            {
+                //spawnedLoot.GetComponent<PickUpScript>().item = 
+            }
+
             Destroy(gameObject);
         }
     }
