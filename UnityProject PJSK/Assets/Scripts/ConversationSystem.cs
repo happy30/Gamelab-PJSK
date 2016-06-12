@@ -101,7 +101,7 @@ public class ConversationSystem : MonoBehaviour {
         }
         mustClickButton = false;
         ui.questButtons.SetActive(false);
-        Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Lyndor);
+        Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.HubTown);
     }
 
     public void NextChar()
@@ -136,6 +136,7 @@ public class ConversationSystem : MonoBehaviour {
                 if(hasQuestItem())
                 {
                     quests.CompleteQuest(questID);
+                    ui.CompleteQuest();
                     firstConversation = questDoneConversation;
                 }
             }

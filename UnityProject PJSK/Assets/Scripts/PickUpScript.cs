@@ -7,6 +7,7 @@ public class PickUpScript : MonoBehaviour {
     public ItemClass item;
     public int piggies;
     public InventoryManager inv;
+    public GameObject obtainedText;
 
     void Start()
     {
@@ -18,13 +19,15 @@ public class PickUpScript : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            if (inv.checkForInventorySpace() && item != null)
+            if (inv.CheckForInventorySpace() && item.itemName != "")
             {
                 inv.inventory.Add(item);
                 Destroy(gameObject);
+                GameObject.Find("Canvas").GetComponent<UIManager>().PickUp(item.itemName + " obtained!");
             }
             if (piggies != 0)
             {
+                GameObject.Find("Canvas").GetComponent<UIManager>().PickUp(piggies.ToString() + "piggies obtained!");
                 inv.changePiggies(piggies);
                 Destroy(gameObject);
             }
