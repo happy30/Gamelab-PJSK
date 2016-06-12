@@ -24,6 +24,17 @@ public class PlayerSpawnLocator : MonoBehaviour
         player = GameObject.Find("Player");
         load = GetComponent<LoadController>();
         ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        if(SceneManager.GetActiveScene().name == "BufferScene")
+        {
+            load.LoadScene("happiWorld");
+        }
+    }
+
+    public void Respawn()
+    {
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        player = GameObject.Find("Player");
+        player.GetComponent<PlayerController>().ui = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     // use this function for fasttravel, or on death. On death use FastTravel(PlayerSpawnLocator.spawnPoint or else you will always respawn to hub.)

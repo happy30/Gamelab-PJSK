@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/happiWorld.unity
   - enabled: 1
     path: Assets/Scenes/Lyndor.unity
+  - enabled: 1
+    path: Assets/Scenes/BufferScene.unity

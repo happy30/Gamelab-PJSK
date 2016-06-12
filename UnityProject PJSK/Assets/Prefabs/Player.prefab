@@ -175,7 +175,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -197,7 +197,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!92 &9286486
 Behaviour:
   m_ObjectHideFlags: 1
@@ -257,12 +257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5bbc67f72864c49b684a3bbe7cffd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
-  runSpeed: 8
+  walkSpeed: 6
+  runSpeed: 10
   movementVelocity: {x: 0, y: 0}
   inConversation: 0
   stats: {fileID: 0}
   jumpHeight: 4
+  ui: {fileID: 0}
   conversation: {fileID: 0}
   interactedObject: {fileID: 0}
 --- !u!114 &11466022
@@ -276,9 +277,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027700d80b93e3748a70bfc8d51226f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: []
+  BGM:
+  - {fileID: 8300000, guid: be9a2e02b5e5edc4aa56e1f959057ef7, type: 3}
+  - {fileID: 8300000, guid: 72a02cae44faba94ebae4a6c57413058, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: eb8db0dc03c3f99449fd98e727cea0a6, type: 3}
+  - {fileID: 8300000, guid: 1cddf2886968e89409bde7e36a42cc34, type: 3}
   sound: {fileID: 0}
-  audioVolume: 0
+  audioVolume: 1
   fading: 0
   currentlyPlaying: 0
   nextPlaying: 0

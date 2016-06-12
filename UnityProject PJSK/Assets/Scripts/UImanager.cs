@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour {
 
     //Assigning player
     public PlayerController player;
+    public GameObject gameManager;
 
     // rmbSprite and interactText appear when standing in front of an interactable object.
     public GameObject rmbSprite;
@@ -22,9 +23,15 @@ public class UIManager : MonoBehaviour {
     //FastTravelSaveManager
     public GameObject fastTravelSaveUI;
 
+    //Loading
+    public GameObject loadInterface;
+    public Slider progressBar;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        gameManager = GameObject.Find("GameManager");
+        gameManager.GetComponent<PlayerSpawnLocator>().Respawn();
     }
 
     //Set the text in the chatpanel
@@ -42,6 +49,11 @@ public class UIManager : MonoBehaviour {
     public void declineButton()
     {
         player.conversation.DeActivate();
+    }
+
+    public void FastTravel(int point)
+    {
+        gameManager.GetComponent<PlayerSpawnLocator>().FastTravel(point);
     }
 
     public void closeFastTravelSaveMenu()

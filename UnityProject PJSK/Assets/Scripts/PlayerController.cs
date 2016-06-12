@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     public float jumpHeight;
 
     //Interacting
-    UIManager ui;
+    public UIManager ui;
     public ConversationSystem conversation;
     public InteractScript interactedObject;
 
@@ -30,12 +30,37 @@ public class PlayerController : MonoBehaviour {
         ui = GameObject.Find("Canvas").GetComponent<UIManager>();
 	}
 	
+    void FixedUpdate()
+    {
+        if(!inConversation)
+        {
+            //Move the character if nothing is blocking our path
+            movementVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
+            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), transform.forward, out hit, 0.65f))
+            {
+                if (hit.collider.tag == "Ground")
+                {
+                    if (movementVelocity.y > 0)
+                    {
+                        movementVelocity.y = 0;
+                    }
+                }
+            }
+            transform.Translate(movementVelocity.x * Time.deltaTime, 0, movementVelocity.y * Time.deltaTime);
+        }
+    }
 
 	void Update ()
     {
         //Change speed to runspeed if Shift is pressed
         speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
         speed *= stats.moveSpeedMultiplier;
+
+        //UI bug
+        if(ui == null)
+        {
+            ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        }
 
         //Can only move when we are not in a conversation
         if (!inConversation)
@@ -80,21 +105,6 @@ public class PlayerController : MonoBehaviour {
                     }
                 }
             }
-
-            //Move the character if nothing is blocking our path
-            movementVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, Input.GetAxisRaw("Vertical") * speed);
-            if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y - 0.30f, transform.position.z), transform.forward, out hit, 0.65f))
-            {
-                if (hit.collider.tag == "Ground")
-                {
-                    if (movementVelocity.y > 0)
-                    {
-                        movementVelocity.y = 0;
-                    }
-                }
-            }
-
-            transform.Translate(movementVelocity.x * Time.deltaTime, 0, movementVelocity.y * Time.deltaTime);
         }
         else
         {
