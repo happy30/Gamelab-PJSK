@@ -8,6 +8,7 @@ public class LoadController : MonoBehaviour {
 
     public GameObject loadingInterface;
     public float xPos;
+    public RectTransform piggy;
     public Slider progressBar;
     AsyncOperation async;
 
@@ -15,6 +16,7 @@ public class LoadController : MonoBehaviour {
     {
         StartCoroutine(LoadLevel(sceneName));
         loadingInterface = GameObject.Find("Canvas").GetComponent<UIManager>().loadInterface;
+        piggy = GameObject.Find("Canvas").GetComponent<UIManager>().loadingPiggy;
         progressBar = GameObject.Find("Canvas").GetComponent<UIManager>().progressBar;
         loadingInterface.SetActive(true);
     }
@@ -40,6 +42,10 @@ public class LoadController : MonoBehaviour {
         {
             progressBar.value = (float)async.progress;
             //we can have a loading bar here
+            if (piggy != null)
+            {
+                piggy.anchoredPosition = new Vector2(((float)async.progress * 600) - 300, piggy.anchoredPosition.y);
+            }
         }
         
 

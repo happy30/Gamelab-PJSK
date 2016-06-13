@@ -112,6 +112,32 @@ public class PlayerController : MonoBehaviour {
             ui.rmbSprite.SetActive(false);
         }
 
+        //Open menus
+        if(Input.GetKeyDown("i"))
+        {
+            ui.OpenPauseMenu(PauseMenuManager.MenuState.Inventory);
+        }
+        if (Input.GetKeyDown("j"))
+        {
+            ui.OpenPauseMenu(PauseMenuManager.MenuState.Questlog);
+        }
+        if (Input.GetKeyDown("c"))
+        {
+            ui.OpenPauseMenu(PauseMenuManager.MenuState.Stats);
+        }
+        if (Input.GetKeyDown("m"))
+        {
+            ui.OpenPauseMenu(PauseMenuManager.MenuState.Map);
+        }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (GameObject.Find("UI_PauseMenu") == null)
+            {
+                ui.OpenPauseMenu(PauseMenuManager.MenuState.Menu);
+            }
+        }
+
     }
 
     // returns what the player is currently standing on.
