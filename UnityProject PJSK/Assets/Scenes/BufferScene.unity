@@ -164,6 +164,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8234618, guid: 2c5629760a2742f40811c6a10f12014a, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c5629760a2742f40811c6a10f12014a, type: 2}
   m_IsPrefabParent: 0

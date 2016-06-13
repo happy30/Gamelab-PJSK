@@ -15,6 +15,8 @@ public class ConversationSystem : MonoBehaviour {
     public PlayerController player;
     public UIManager ui;
     public InteractScript interact;
+    AudioSource sound;
+    public AudioClip clip;
 
     public string npcName;
 
@@ -46,6 +48,7 @@ public class ConversationSystem : MonoBehaviour {
         quests = GameObject.Find("GameManager").GetComponent<QuestManager>();
         inventoryManager = GameObject.Find("GameManager").GetComponent<InventoryManager>();
         interact = GetComponent<InteractScript>();
+        sound = GetComponent<AudioSource>();
         scrollSpeed = 0.05f;
 	}
 	
@@ -109,6 +112,7 @@ public class ConversationSystem : MonoBehaviour {
         if(currentChar < fullDialogueLine.Length)
         {
             displayLine += fullDialogueLine[currentChar];
+            sound.PlayOneShot(clip, 1);
             currentChar++;
         }
     }
