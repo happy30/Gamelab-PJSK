@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3310766}
   - 23: {fileID: 2371620}
   - 95: {fileID: 9545962}
+  - 64: {fileID: 6497888}
   m_Layer: 0
   m_Name: 3D_HUB_PiggyPen_MODEL_001
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126684}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -5.072843, y: -4.031539, z: 0.6240692}
+  m_LocalPosition: {x: 181.27646, y: 2.0717528, z: 204.2632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,6 +63,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126684}
+  m_Mesh: {fileID: 4300000, guid: a2ea3a29a41e28b48acdf283385c5528, type: 3}
+--- !u!64 &6497888
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: a2ea3a29a41e28b48acdf283385c5528, type: 3}
 --- !u!95 &9545962
 Animator:

@@ -11,7 +11,7 @@ public class InventoryManager : MonoBehaviour
     public int inventorySize;
     public int piggies;
 
-    public bool checkForInventorySpace()
+    public bool CheckForInventorySpace()
     {
         if (inventory.Count >= inventorySize)
         {
