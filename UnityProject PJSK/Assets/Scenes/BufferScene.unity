@@ -242,6 +242,23 @@ Prefab:
       propertyPath: itemDatabase.Array.data[0].icon
       value: 
       objectReference: {fileID: 2800000, guid: 9fa11deb4c03ad040ab59aca39880d03, type: 3}
+    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
+      propertyPath: quests.Array.data[1].questID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
+      propertyPath: quests.Array.data[1].questName
+      value: This Piggy is hungry too!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
+      propertyPath: quests.Array.data[1].questDescription
+      value: So you gave my friend pork well I am hungry too and I will pay you a
+        lot more!!!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
+      propertyPath: quests.Array.data[1].piggieReward
+      value: 1000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
   m_IsPrefabParent: 0

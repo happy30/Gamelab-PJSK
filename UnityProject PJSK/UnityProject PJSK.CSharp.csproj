@@ -58,14 +58,14 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +107,7 @@
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\QuestID.cs" />
     <Compile Include="Assets\Scripts\BGMPlayer.cs" />
     <Compile Include="Assets\Scripts\ButtonClass.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
@@ -132,9 +133,6 @@
     <Compile Include="Assets\Scripts\QuestClass.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
     <Compile Include="Assets\Scripts\StatsManager.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\UImanager.cs" />
-=======
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -144,13 +142,6 @@
     <Compile Include="Assets\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Water\Water\Scripts\WaterTile.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e84cdb99db32550ded16aa1ffc95120dd394f6a4
-=======
->>>>>>> 309774ad76462b7c276f6fd353498eba53de8f1f
-=======
->>>>>>> f827d8eb5c33f8729d66c054be3c253f8df16aeb
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

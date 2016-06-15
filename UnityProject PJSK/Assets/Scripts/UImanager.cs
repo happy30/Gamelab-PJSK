@@ -56,6 +56,18 @@ public class UIManager : MonoBehaviour {
         gameManager = GameObject.Find("GameManager");
         gameManager.GetComponent<PlayerSpawnLocator>().Respawn();
         UISound = GetComponent<AudioSource>();
+        for (int i = 0; i < quests.quests.Length; i++)
+        {
+            if (quests.quests[i].questState == QuestClass.QuestState.Active || quests.quests[i].questState == QuestClass.QuestState.Completed)
+            {
+                MakeQuestEntry(i);
+            }
+        }
+    }
+
+    void Update()
+    {
+
     }
 
     //Set the text in the chatpanel
@@ -65,6 +77,7 @@ public class UIManager : MonoBehaviour {
         npcChatText.text = text;
     }
 
+    //Accept a quest
     public void acceptButton()
     {
         player.conversation.AcceptButton();
@@ -72,6 +85,7 @@ public class UIManager : MonoBehaviour {
         UISound.PlayOneShot(questAccepted, 1);
     }
 
+    //Complete a quest
     public void CompleteQuest()
     {
         questCompletedUI.SetActive(true);
@@ -123,6 +137,7 @@ public class UIManager : MonoBehaviour {
     public void MakeQuestEntry(int questID)
     {
         GameObject questObject = Instantiate(emptyQuestObject);
+        questObject.GetComponent<QuestID>().ID = questID;
         questObject.transform.Find("QuestTitle").GetComponent<Text>().text = quests.quests[questID].questName;
         questObject.transform.Find("QuestDescription").GetComponent<Text>().text = quests.quests[questID].questDescription;
         questObject.transform.Find("QuestStatus").GetComponent<Image>().sprite = activeQuest;
