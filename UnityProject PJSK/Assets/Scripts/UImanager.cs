@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour {
 
     //Loading
     public GameObject loadInterface;
+    public RectTransform loadingPiggy;
     public Slider progressBar;
 
     //PickUpScript
@@ -38,6 +39,9 @@ public class UIManager : MonoBehaviour {
     public AudioClip itemGet;
     public AudioClip questAccepted;
     public AudioClip questCompleted;
+
+    //Pause menu
+    public GameObject pauseMenuPanel;
 
     void Start()
     {
@@ -88,5 +92,18 @@ public class UIManager : MonoBehaviour {
         obtainedUI.SetActive(true);
         obtainedText.text = text;
         UISound.PlayOneShot(itemGet, 0.5f);
+    }
+
+    public void OpenPauseMenu(PauseMenuManager.MenuState state)
+    {
+        pauseMenuPanel.SetActive(true);
+        if (GameObject.Find("UI_PauseMenu").GetComponent<PauseMenuManager>().menuState == state)
+        {
+            GameObject.Find("UI_PauseMenu").GetComponent<PauseMenuManager>().Continue();
+        }
+        else
+        {
+            GameObject.Find("UI_PauseMenu").GetComponent<PauseMenuManager>().menuState = state;
+        }
     }
 }
