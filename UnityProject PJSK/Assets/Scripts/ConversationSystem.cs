@@ -153,6 +153,7 @@ public class ConversationSystem : MonoBehaviour {
     public void AcceptButton()
     {
         quests.ActivateQuest(questID);
+        ui.MakeQuestEntry(questID);
         firstConversation = secondConversation;
         DeActivate();
     }
