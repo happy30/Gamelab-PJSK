@@ -22,6 +22,7 @@ public class PauseMenuManager : MonoBehaviour {
 
     //Inventory
     public Text piggies;
+    public Sprite[] inventoryItems;
 
     //map
     public GameObject worldMap;
@@ -115,6 +116,8 @@ public class PauseMenuManager : MonoBehaviour {
         }
 
         rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, new Vector2(xPos, rectTransform.anchoredPosition.y), 8 * Time.deltaTime);
+
+
 	}
 
 
@@ -135,7 +138,6 @@ public class PauseMenuManager : MonoBehaviour {
         }
             
     }
-
 
     public void Continue()
     {
