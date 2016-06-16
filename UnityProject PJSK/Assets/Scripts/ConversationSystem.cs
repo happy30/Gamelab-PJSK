@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class ConversationSystem : MonoBehaviour {
     public enum NPCType
@@ -104,7 +104,14 @@ public class ConversationSystem : MonoBehaviour {
         }
         mustClickButton = false;
         ui.questButtons.SetActive(false);
-        Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.HubTown);
+        if (SceneManager.GetActiveScene().name == "happiWorld")
+        {
+            Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.HubTown);
+        }
+        else if (SceneManager.GetActiveScene().name == "Lyndor")
+        {
+            Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Lyndor);
+        }
     }
 
     public void NextChar()

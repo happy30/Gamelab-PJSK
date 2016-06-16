@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
     public ConversationSystem conversation;
     public InteractScript interactedObject;
 
-
 	void Start ()
     {
         _rb = GetComponent<Rigidbody>();

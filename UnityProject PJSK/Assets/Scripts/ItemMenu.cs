@@ -6,7 +6,16 @@ public class ItemMenu : MonoBehaviour
 {
     public ItemClass item;
     public GameObject itemMenu;
+    public UIManager ui;
+    public ItemDatabase itemDatabase;
+    public InventoryManager inventoryManager;
 
+    void Start()
+    {
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        itemDatabase = GameObject.Find("GameManager").GetComponent<ItemDatabase>();
+        inventoryManager = GameObject.Find("GameManager").GetComponent<InventoryManager>();
+    }
     public void OnMouseHover()
     {
         if (item != null)
@@ -64,6 +73,27 @@ public class ItemMenu : MonoBehaviour
     public void RemoveItem()
     {
         item = null;
+    }
+
+    public void Click(int slot)
+    {
+        if (item != null)
+        {
+            if (item.itemName == "Potion")
+            {
+                itemDatabase.Potion();
+                ui.UISound.PlayOneShot(ui.potionSound, 1);
+                inventoryManager.inventory.Remove(inventoryManager.inventory[slot]);
+                RemoveItem();
+            }
+            else if (item.itemName == "Super Potion")
+            {
+                itemDatabase.SuperPotion();
+                ui.UISound.PlayOneShot(ui.potionSound, 1);
+                inventoryManager.inventory.Remove(inventoryManager.inventory[slot]);
+                RemoveItem();
+            }
+        }
     }
 
 }

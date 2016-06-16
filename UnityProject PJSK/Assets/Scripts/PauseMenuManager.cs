@@ -11,6 +11,7 @@ public class PauseMenuManager : MonoBehaviour
     public InventoryManager inventory;
     public PlayerController player;
     public RectTransform rectTransform;
+    public UIManager ui;
 
     //Stats
     public Text maxHPText;
@@ -41,6 +42,11 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject rightArrow;
     public float xPos;
 
+    //Audio
+    AudioSource sound;
+    public AudioClip navSound;
+    public AudioClip continueSound;
+
     public enum MenuState
     {
         Stats,
@@ -60,6 +66,8 @@ public class PauseMenuManager : MonoBehaviour
         stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
         quests = GameObject.Find("GameManager").GetComponent<QuestManager>();
         inventory = GameObject.Find("GameManager").GetComponent<InventoryManager>();
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        sound = GetComponent<AudioSource>();
         rectTransform = GetComponent<RectTransform>();
 	}
 	
@@ -169,6 +177,7 @@ public class PauseMenuManager : MonoBehaviour
         if((int)menuState > 0)
         {
             menuState--;
+            sound.PlayOneShot(navSound, 1);
         }
         
     }
@@ -178,6 +187,7 @@ public class PauseMenuManager : MonoBehaviour
         if ((int)menuState < 4)
         {
             menuState++;
+            sound.PlayOneShot(navSound, 1);
         }
             
     }
@@ -185,8 +195,10 @@ public class PauseMenuManager : MonoBehaviour
     public void Continue()
     {
         //Time.timeScale = 1;
+        ui.UISound.PlayOneShot(ui.closeMenu, 0.8f);
         menuState = MenuState.Buffer;
         player.inConversation = false;
         allPanels.SetActive(false);
+        
     }
 }

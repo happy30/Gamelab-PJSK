@@ -37,10 +37,15 @@ public class UIManager : MonoBehaviour {
     public GameObject obtainedUI;
 
     //Sounds
-    AudioSource UISound;
+    public AudioSource UISound;
     public AudioClip itemGet;
     public AudioClip questAccepted;
     public AudioClip questCompleted;
+    public AudioClip questDenied;
+    public AudioClip closeMenu;
+    public AudioClip openMenu;
+    public AudioClip navSound;
+    public AudioClip potionSound;
 
     //Pause menu
     public GameObject pauseMenuPanels;
@@ -89,12 +94,13 @@ public class UIManager : MonoBehaviour {
     public void CompleteQuest()
     {
         questCompletedUI.SetActive(true);
-        UISound.PlayOneShot(questCompleted, 1);
+        UISound.PlayOneShot(questCompleted, 0.8f);
     }
 
     public void declineButton()
     {
         player.conversation.DeActivate();
+        UISound.PlayOneShot(questDenied, 0.8f);
     }
 
     public void FastTravel(int point)
@@ -106,6 +112,7 @@ public class UIManager : MonoBehaviour {
     {
         fastTravelSaveUI.SetActive(false);
         player.interactedObject.closeInteraction();
+        UISound.PlayOneShot(questDenied, 0.8f);
     }
 
     public void PickUp(string text)
@@ -126,11 +133,13 @@ public class UIManager : MonoBehaviour {
             else
             {
                 pauseMenu.menuState = state;
+                UISound.PlayOneShot(navSound, 1);
             }
         }
         else
         {
             pauseMenuPanels.SetActive(true);
+            UISound.PlayOneShot(openMenu, 0.8f);
             pauseMenu.menuState = state;
         }     
     }
