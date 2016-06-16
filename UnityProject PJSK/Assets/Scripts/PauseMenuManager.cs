@@ -22,7 +22,8 @@ public class PauseMenuManager : MonoBehaviour {
 
     //Inventory
     public Text piggies;
-    public Sprite[] inventoryItems;
+    public Image[] inventoryItems;
+    public Sprite emptyItem;
 
     //map
     public GameObject worldMap;
@@ -145,6 +146,16 @@ public class PauseMenuManager : MonoBehaviour {
                     }
                 }
             }
+        }
+
+        //First make all sprites empty, and then add the ones that are filled.
+        for(int i = 0; i < 18; i++)
+        {
+            inventoryItems[i].sprite = emptyItem;         
+        }
+        for(int i = 0; i < inventory.inventory.Count; i ++)
+        {
+            inventoryItems[i].sprite = inventory.inventory[i].icon;
         }
 
 	}
