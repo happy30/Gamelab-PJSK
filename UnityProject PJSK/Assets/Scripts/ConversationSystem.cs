@@ -112,7 +112,7 @@ public class ConversationSystem : MonoBehaviour {
         if(currentChar < fullDialogueLine.Length)
         {
             displayLine += fullDialogueLine[currentChar];
-            sound.PlayOneShot(clip, 1);
+            sound.PlayOneShot(clip, 0.7f);
             currentChar++;
         }
     }
@@ -160,14 +160,24 @@ public class ConversationSystem : MonoBehaviour {
 
     public bool hasQuestItem()
     {
-        if (inventoryManager.inventory.Any(opt => opt.itemID.Equals(questItemID)))
+        for(int i = 0; i < inventoryManager.inventory.Count; i++)
         {
-            inventoryManager.inventory.Remove(inventoryManager.inventory.Where(x => x.itemID == questItemID).SingleOrDefault());
-            return true;
+            if(inventoryManager.inventory[i].itemID == questItemID)
+            {
+                inventoryManager.inventory.Remove(inventoryManager.inventory[i]);
+                return true;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return false;
+        //if (inventoryManager.inventory.Any(opt => opt.itemID.Equals(questItemID)))
+        //{
+        //    inventoryManager.inventory.Remove(inventoryManager.inventory.Where(x => x.itemID == questItemID).SingleOrDefault());
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
+
     }
 }

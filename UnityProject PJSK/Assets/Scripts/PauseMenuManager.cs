@@ -3,7 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PauseMenuManager : MonoBehaviour {
+public class PauseMenuManager : MonoBehaviour
+{
 
     public StatsManager stats;
     public QuestManager quests;
@@ -129,6 +130,7 @@ public class PauseMenuManager : MonoBehaviour {
         {
             questObjects[i].transform.SetParent(viewport.transform);
             questObjects[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -30 + (i * -90));
+            questObjects[i].GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             //if(quests.quests[i].questState == QuestClass.QuestState.Completed)
             //{
             //    questObjects[i].transform.Find("QuestStatus").GetComponent<Image>().sprite = completedQuest;
@@ -151,14 +153,15 @@ public class PauseMenuManager : MonoBehaviour {
         //First make all sprites empty, and then add the ones that are filled.
         for(int i = 0; i < 18; i++)
         {
-            inventoryItems[i].sprite = emptyItem;         
+            inventoryItems[i].sprite = emptyItem;
+            inventoryItems[i].GetComponent<ItemMenu>().RemoveItem();
         }
         for(int i = 0; i < inventory.inventory.Count; i ++)
         {
             inventoryItems[i].sprite = inventory.inventory[i].icon;
+            inventoryItems[i].GetComponent<ItemMenu>().item = inventory.inventory[i];
         }
-
-	}
+    }
 
 
     public void LeftArrow()
