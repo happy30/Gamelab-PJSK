@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-    //Assigning player
+    //Assigning gamemanager
     public PlayerController player;
     public GameObject gameManager;
+    public QuestManager quests;
 
     // rmbSprite and interactText appear when standing in front of an interactable object.
     public GameObject rmbSprite;
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour {
     public GameObject questButtons;
     public GameObject questAcceptedUI;
     public GameObject questCompletedUI;
+    
 
     //FastTravelSaveManager
     public GameObject fastTravelSaveUI;
@@ -41,14 +43,31 @@ public class UIManager : MonoBehaviour {
     public AudioClip questCompleted;
 
     //Pause menu
-    public GameObject pauseMenuPanel;
+    public GameObject pauseMenuPanels;
+    public PauseMenuManager pauseMenu;
+    public GameObject emptyQuestObject;
+    public Sprite activeQuest;
+    public Sprite CompletedQuest;
 
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        quests = GameObject.Find("GameManager").GetComponent<QuestManager>();
         gameManager = GameObject.Find("GameManager");
         gameManager.GetComponent<PlayerSpawnLocator>().Respawn();
         UISound = GetComponent<AudioSource>();
+        for (int i = 0; i < quests.quests.Length; i++)
+        {
+            if (quests.quests[i].questState == QuestClass.QuestState.Active || quests.quests[i].questState == QuestClass.QuestState.Completed)
+            {
+                MakeQuestEntry(i);
+            }
+        }
+    }
+
+    void Update()
+    {
+
     }
 
     //Set the text in the chatpanel
@@ -58,6 +77,7 @@ public class UIManager : MonoBehaviour {
         npcChatText.text = text;
     }
 
+    //Accept a quest
     public void acceptButton()
     {
         player.conversation.AcceptButton();
@@ -65,6 +85,7 @@ public class UIManager : MonoBehaviour {
         UISound.PlayOneShot(questAccepted, 1);
     }
 
+    //Complete a quest
     public void CompleteQuest()
     {
         questCompletedUI.SetActive(true);
@@ -96,14 +117,30 @@ public class UIManager : MonoBehaviour {
 
     public void OpenPauseMenu(PauseMenuManager.MenuState state)
     {
-        pauseMenuPanel.SetActive(true);
-        if (GameObject.Find("UI_PauseMenu").GetComponent<PauseMenuManager>().menuState == state)
+        if(pauseMenuPanels.activeSelf)
         {
-            GameObject.Find("UI_PauseMenu").GetComponent<PauseMenuManager>().Continue();
+            if (pauseMenu.menuState == state)
+            {
+                pauseMenu.Continue();
+            }
+            else
+            {
+                pauseMenu.menuState = state;
+            }
         }
         else
         {
-            GameObject.Find("UI_PauseMenu").GetComponent<PauseMenuManager>().menuState = state;
-        }
+            pauseMenuPanels.SetActive(true);
+            pauseMenu.menuState = state;
+        }     
+    }
+    public void MakeQuestEntry(int questID)
+    {
+        GameObject questObject = Instantiate(emptyQuestObject);
+        questObject.GetComponent<QuestID>().ID = questID;
+        questObject.transform.Find("QuestTitle").GetComponent<Text>().text = quests.quests[questID].questName;
+        questObject.transform.Find("QuestDescription").GetComponent<Text>().text = quests.quests[questID].questDescription;
+        questObject.transform.Find("QuestStatus").GetComponent<Image>().sprite = activeQuest;
+        questObject.transform.Find("QuestReward").GetComponent<Text>().text = "Reward: " + quests.quests[questID].piggieReward + " Piggies";
     }
 }

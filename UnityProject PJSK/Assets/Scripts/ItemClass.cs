@@ -10,7 +10,7 @@ public class ItemClass
     public bool sellable;
     public int buyPrice;
     public int sellPrice;
-    public Texture2D icon;
+    public Sprite icon;
 
     public ItemClass(int id, string name, bool cons, bool sell, int buyP, int sellP)
     {

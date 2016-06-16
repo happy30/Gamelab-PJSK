@@ -22,10 +22,17 @@ public class PauseMenuManager : MonoBehaviour {
 
     //Inventory
     public Text piggies;
+    public Image[] inventoryItems;
+    public Sprite emptyItem;
 
     //map
     public GameObject worldMap;
     public GameObject lyndorMap;
+
+    //quests
+    public GameObject viewport;
+    public Sprite completedQuest;
+  
 
     //nav
     public GameObject allPanels;
@@ -115,6 +122,42 @@ public class PauseMenuManager : MonoBehaviour {
         }
 
         rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, new Vector2(xPos, rectTransform.anchoredPosition.y), 8 * Time.deltaTime);
+
+        //Find the quests and then add them to the pausemenu.
+        GameObject[] questObjects = GameObject.FindGameObjectsWithTag("QuestObject");
+        for(int i = 0; i < questObjects.Length; i++)
+        {
+            questObjects[i].transform.SetParent(viewport.transform);
+            questObjects[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -30 + (i * -90));
+            //if(quests.quests[i].questState == QuestClass.QuestState.Completed)
+            //{
+            //    questObjects[i].transform.Find("QuestStatus").GetComponent<Image>().sprite = completedQuest;
+            //}
+        }
+        for(int i = 0; i < quests.quests.Length; i++)
+        {
+            if(quests.quests[i].questState == QuestClass.QuestState.Completed)
+            {
+                for(int i2 = 0; i2 < questObjects.Length; i2++)
+                {
+                    if(questObjects[i2].GetComponent<QuestID>().ID == i)
+                    {
+                        questObjects[i2].transform.Find("QuestStatus").GetComponent<Image>().sprite = completedQuest;
+                    }
+                }
+            }
+        }
+
+        //First make all sprites empty, and then add the ones that are filled.
+        for(int i = 0; i < 18; i++)
+        {
+            inventoryItems[i].sprite = emptyItem;         
+        }
+        for(int i = 0; i < inventory.inventory.Count; i ++)
+        {
+            inventoryItems[i].sprite = inventory.inventory[i].icon;
+        }
+
 	}
 
 
@@ -135,7 +178,6 @@ public class PauseMenuManager : MonoBehaviour {
         }
             
     }
-
 
     public void Continue()
     {

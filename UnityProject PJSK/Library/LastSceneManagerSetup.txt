@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Lyndor.unity
+=======
+- path: Assets/Scenes/BufferScene.unity
+>>>>>>> be77f394248a555439fbd0950d67fbdcfbc383b1
   isLoaded: 1
   isActive: 1
