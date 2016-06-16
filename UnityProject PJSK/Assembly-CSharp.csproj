@@ -96,13 +96,13 @@
      <Compile Include="Assets\Scripts\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\ItemClass.cs" />
      <Compile Include="Assets\Scripts\ItemDatabase.cs" />
-     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\CreditsManager.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\LoadController.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\PlaySoundAtPoint.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\TextScript.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\PauseMenuManager.cs" />
      <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawnLocator.cs" />
