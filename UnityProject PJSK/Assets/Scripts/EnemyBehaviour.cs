@@ -40,6 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         playerHealth = GameObject.Find("GameManager").GetComponent<StatsManager>().health;
+        player = GameObject.Find("Player");
         currentWaypoint = 0;
         nav = GetComponent<NavMeshAgent>();
     }
