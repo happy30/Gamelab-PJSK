@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/happiWorld.unity
+=======
+- path: Assets/Scenes/SaschaScene.unity
+>>>>>>> 1494407291b29f113d0ec8fd94f56360813f92d6
   isLoaded: 1
   isActive: 1
