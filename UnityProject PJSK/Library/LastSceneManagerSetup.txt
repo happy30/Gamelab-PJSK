@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/happiWorld.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/World.unity
-=======
-- path: Assets/Scenes/Peetsjcene.unity
->>>>>>> 559414e32616d0b08623ffd1ef0c45184e43b131
->>>>>>> 51c2d2834147af32fd1af8d9e37607ca0fd0a358
+- path: Assets/Scenes/BufferScene.unity
   isLoaded: 1
   isActive: 1

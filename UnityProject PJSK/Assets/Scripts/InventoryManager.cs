@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
 {
     //Inventory script. weapons are excluded from the inventory. Piggies are the currency
     public List <ItemClass> inventory = new List <ItemClass>();
-    public List <GameObject> weapons = new List<GameObject>();
+    public bool[] weaponsUnlocked;
 
     public int inventorySize;
     public int piggies;
