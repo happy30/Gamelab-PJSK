@@ -29,6 +29,7 @@ public class StatsManager : MonoBehaviour
         quests = GetComponent<QuestManager>();
     }
 
+    //Save and load are not tested
     public void SaveGame()
     {
         savedGames.Add(StatsManager.current);

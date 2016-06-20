@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+//This script handles the UI for the inventory
 public class ItemMenu : MonoBehaviour
 {
     public ItemClass item;
@@ -16,6 +17,8 @@ public class ItemMenu : MonoBehaviour
         itemDatabase = GameObject.Find("GameManager").GetComponent<ItemDatabase>();
         inventoryManager = GameObject.Find("GameManager").GetComponent<InventoryManager>();
     }
+
+    //I used EventTrigger.OnPointerHover in inspector, on hover show the stats and name of item. sorry for too many GameObject.Find...
     public void OnMouseHover()
     {
         if (item != null)
@@ -61,6 +64,7 @@ public class ItemMenu : MonoBehaviour
             }
         }
     }
+    //reset the UI if we don't hover over an item anymore
     public void OnMouseHoverExit()
     {
         itemMenu.transform.Find("ItemName").GetComponent<Text>().text = "";
@@ -75,6 +79,7 @@ public class ItemMenu : MonoBehaviour
         item = null;
     }
 
+    //Two consumables in this game that can be clicked...
     public void Click(int slot)
     {
         if (item != null)

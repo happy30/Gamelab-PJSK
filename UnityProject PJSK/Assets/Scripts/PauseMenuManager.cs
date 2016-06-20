@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//shitload of UI items to show in the menus
 public class PauseMenuManager : MonoBehaviour
 {
-
+    //communicating 
     public StatsManager stats;
     public QuestManager quests;
     public InventoryManager inventory;
@@ -139,10 +140,6 @@ public class PauseMenuManager : MonoBehaviour
             questObjects[i].transform.SetParent(viewport.transform);
             questObjects[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -30 + (i * -90));
             questObjects[i].GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-            //if(quests.quests[i].questState == QuestClass.QuestState.Completed)
-            //{
-            //    questObjects[i].transform.Find("QuestStatus").GetComponent<Image>().sprite = completedQuest;
-            //}
         }
         for(int i = 0; i < quests.quests.Length; i++)
         {
@@ -194,7 +191,6 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Continue()
     {
-        //Time.timeScale = 1;
         ui.UISound.PlayOneShot(ui.closeMenu, 0.8f);
         menuState = MenuState.Buffer;
         player.inConversation = false;

@@ -6,6 +6,7 @@ public class ItemDatabase : MonoBehaviour
 {
     public List<ItemClass> itemDatabase = new List<ItemClass>();
 
+    //We have two consumables that have effect on the stats once called.
     public void Potion()
     {
         GetComponent<StatsManager>().health = GetComponent<StatsManager>().health + (int)Mathf.Round(GetComponent<StatsManager>().maxHealth * 0.30f);

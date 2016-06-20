@@ -8,6 +8,7 @@ TagManager:
   - Interact
   - PickUp
   - QuestObject
+  - Piggy
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class ItemSlotManager : MonoBehaviour {
         }
 	}
 
+    //If we press the button the item will follow the cursor, we can press another button to swap it.
     public void PressButton(ItemSlot button)
     {
         if(button.heldItem != null)

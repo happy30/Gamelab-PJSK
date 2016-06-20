@@ -7,6 +7,7 @@ public class PickUpScript : MonoBehaviour {
     public int itemID;
     ItemClass item;
     public int piggies;
+
     public InventoryManager inv;
     public GameObject obtainedText;
     public ItemDatabase itemDatabase;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//This script will check if the player has interacted with an interactable object. If so, another script can be triggered (start talking, opening a door etc)
 public class InteractScript : MonoBehaviour {
 
     public bool interacted;
@@ -11,7 +12,6 @@ public class InteractScript : MonoBehaviour {
 	void Start ()
     {
         player = Camera.main.transform.parent.GetComponent<PlayerController>();
-
     }
 	
 	// Update is called once per frame
@@ -37,5 +37,4 @@ public class InteractScript : MonoBehaviour {
         player.inConversation = false;
         interacted = false;
     }
-    
 }

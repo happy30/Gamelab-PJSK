@@ -21,6 +21,7 @@ public class ItemClass
     public Tier tier;
     public Sprite icon;
 
+    //unused constructor
     public ItemClass(int id, string name, bool cons, bool sell, int buyP, int sellP)
     {
         this.itemID = id;

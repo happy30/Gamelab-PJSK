@@ -3,10 +3,18 @@ using System.Collections;
 
 public class WeaponController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    public int healthBonus;
+    public int attackPowerBonus;
+
+    public StatsManager stats;
+
+    //Once this weapon is activated, add stats permanently (WIP)
+    void Start()
+    {
+        stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
+        stats.maxHealth += healthBonus;
+        stats.attackPower += attackPowerBonus;
+    }
 	
 	// Update is called once per frame
 	void Update () {

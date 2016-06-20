@@ -171,6 +171,65 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c5629760a2742f40811c6a10f12014a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &433979444 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 106846, guid: d2d0df81a5430c740a99a027ae843abc, type: 2}
+  m_PrefabInternal: {fileID: 1969074557}
+--- !u!114 &433979445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433979444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 0.05
+  aperture: 0.5
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: 0.5
+  dx11SpawnHeuristic: 0.0875
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.2
+  dx11BokehIntensity: 2.5
+--- !u!114 &433979446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 433979444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646b5bc27a658f447b1d929fd5ffbd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 1
+  showGeneratedNormals: 0
+  offsetScale: 0.2
+  blurRadius: 18
+  edgeThresholdMin: 0.05
+  edgeThreshold: 0.2
+  edgeSharpness: 4
+  dlaaSharp: 0
+  ssaaShader: {fileID: 4800000, guid: b3728d1488b02490cbd196c7941bf1f8, type: 3}
+  dlaaShader: {fileID: 4800000, guid: 017ca72b9e8a749058d13ebd527e98fa, type: 3}
+  nfaaShader: {fileID: 4800000, guid: ce0cb2621f6d84e21a87414e471a3cce, type: 3}
+  shaderFXAAPreset2: {fileID: 4800000, guid: 6f1418cffd12146f2a83be795f6fa5a7, type: 3}
+  shaderFXAAPreset3: {fileID: 4800000, guid: c182fa94a5a0a4c02870641efcd38cd5, type: 3}
+  shaderFXAAII: {fileID: 4800000, guid: cd5b323dcc592457790ff18b528f5e67, type: 3}
+  shaderFXAAIII: {fileID: 4800000, guid: c547503fff0e8482ea5793727057041c, type: 3}
 --- !u!1001 &1047253873
 Prefab:
   m_ObjectHideFlags: 0
@@ -178,18 +237,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11433480, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: inventory.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11498974, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: spawnLocations.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 469220, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -222,166 +269,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[0].questName
-      value: Piggy's Love
-      objectReference: {fileID: 0}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[0].questDescription
-      value: Get piggy a heart, so this poor little pig can love again. He is so full
-        of sadness!
-      objectReference: {fileID: 0}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[0].piggieReward
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 11433480, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: inventorySize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[0].icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 9fa11deb4c03ad040ab59aca39880d03,
-        type: 3}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[1].questID
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[1].questName
-      value: Piggy's high adventures
-      objectReference: {fileID: 0}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[1].questDescription
-      value: This piggy is too low and needs to get high again. Try feeding him some
-        "Grass"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11466168, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: quests.Array.data[1].piggieReward
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[0].itemDescription
-      value: Heals 30%
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].itemID
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].itemName
-      value: A Heart
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].itemDescription
-      value: This heart will bring lots of love for a reasion that I do not know myself.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].tier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].icon
-      value: 
-      objectReference: {fileID: 21300000, guid: ce49b718247dd314989814fd91450592,
-        type: 3}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[2].itemID
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[2].itemName
-      value: An Empty Heart
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[2].sellable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].sellable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[1].sellPrice
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[2].sellPrice
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[2].itemDescription
-      value: This heart is worth a lot less.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[2].icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 266bd3f33d8e73541b4b782665b2fed8,
-        type: 3}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].itemID
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].itemName
-      value: Super Potion
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].consumable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].sellable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].sellPrice
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].itemDescription
-      value: Heals 50%
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].tier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[3].icon
-      value: 
-      objectReference: {fileID: 21300000, guid: d6c62d3a0d5153b49b7d295f4f17f0f9,
-        type: 3}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].itemName
-      value: Weed
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].tier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].sellable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].itemDescription
-      value: "This is some quality dutch weed. You might wonder how that came into
-        this game, Sorry but I don\xB4t know man."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].sellPrice
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].itemID
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11426844, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
-      propertyPath: itemDatabase.Array.data[4].icon
-      value: 
-      objectReference: {fileID: 21300000, guid: 544ad67010498f64d86b78dfb278cfa7,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c75f7aa350a655c49af93148db4ca519, type: 2}
   m_IsPrefabParent: 0
@@ -423,6 +310,10 @@ Prefab:
     - target: {fileID: 475372, guid: d2d0df81a5430c740a99a027ae843abc, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467816, guid: d2d0df81a5430c740a99a027ae843abc, type: 2}
+      propertyPath: useSrcAlphaAsMask
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2d0df81a5430c740a99a027ae843abc, type: 2}

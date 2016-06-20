@@ -70,11 +70,6 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    void Update()
-    {
-
-    }
-
     //Set the text in the chatpanel
     public void UpdateText(string name, string text)
     {
@@ -97,17 +92,20 @@ public class UIManager : MonoBehaviour {
         UISound.PlayOneShot(questCompleted, 0.8f);
     }
 
+    //Decline a quest
     public void declineButton()
     {
         player.conversation.DeActivate();
         UISound.PlayOneShot(questDenied, 0.8f);
     }
 
+    //Go somewhere really fast
     public void FastTravel(int point)
     {
         gameManager.GetComponent<PlayerSpawnLocator>().FastTravel(point);
     }
 
+    //close this menu
     public void closeFastTravelSaveMenu()
     {
         fastTravelSaveUI.SetActive(false);
@@ -115,6 +113,7 @@ public class UIManager : MonoBehaviour {
         UISound.PlayOneShot(questDenied, 0.8f);
     }
 
+    //Show an animation on item pickup
     public void PickUp(string text)
     {
         obtainedUI.SetActive(true);
@@ -122,6 +121,7 @@ public class UIManager : MonoBehaviour {
         UISound.PlayOneShot(itemGet, 0.5f);
     }
 
+    //Open pausemenu
     public void OpenPauseMenu(PauseMenuManager.MenuState state)
     {
         if(pauseMenuPanels.activeSelf)
@@ -143,6 +143,8 @@ public class UIManager : MonoBehaviour {
             pauseMenu.menuState = state;
         }     
     }
+
+    //Transfer the instantiated quests to show in the UI
     public void MakeQuestEntry(int questID)
     {
         GameObject questObject = Instantiate(emptyQuestObject);

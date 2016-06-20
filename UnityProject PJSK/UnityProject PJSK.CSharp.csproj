@@ -101,12 +101,14 @@
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\PiggyBehaviour.cs" />
     <Compile Include="Assets\Scripts\BGMPlayer.cs" />
     <Compile Include="Assets\Scripts\ConversationSystem.cs" />
     <Compile Include="Assets\Scripts\DoorHandler.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\EnemyClass.cs" />
     <Compile Include="Assets\Scripts\FastTravelSafeManager.cs" />
+    <Compile Include="Assets\Scripts\IggyScript.cs" />
     <Compile Include="Assets\Scripts\InteractScript.cs" />
     <Compile Include="Assets\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\ItemClass.cs" />
