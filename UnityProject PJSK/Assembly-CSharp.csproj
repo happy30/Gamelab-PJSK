@@ -85,10 +85,7 @@
      <Compile Include="Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
      <Compile Include="Assets\Scripts\BGMPlayer.cs" />
      <Compile Include="Assets\Scripts\ConversationSystem.cs" />
-<<<<<<< HEAD
-=======
      <Compile Include="Assets\Scripts\DoorHandler.cs" />
->>>>>>> f827d8eb5c33f8729d66c054be3c253f8df16aeb
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\EnemyClass.cs" />
      <Compile Include="Assets\Scripts\FastTravelSafeManager.cs" />
@@ -96,28 +93,20 @@
      <Compile Include="Assets\Scripts\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\ItemClass.cs" />
      <Compile Include="Assets\Scripts\ItemDatabase.cs" />
-     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\CreditsManager.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\LoadController.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\PlaySoundAtPoint.cs" />
      <Compile Include="Assets\Scripts\Miscellaneous\TextScript.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\PauseMenuManager.cs" />
      <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerSpawnLocator.cs" />
      <Compile Include="Assets\Scripts\QuestClass.cs" />
      <Compile Include="Assets\Scripts\QuestManager.cs" />
      <Compile Include="Assets\Scripts\StatsManager.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\UImanager.cs" />
-=======
-<<<<<<< HEAD
-     <Compile Include="Assets\Scripts\UIManager.cs" />
-=======
-     <Compile Include="Assets\Scripts\UImanager.cs" />
->>>>>>> f827d8eb5c33f8729d66c054be3c253f8df16aeb
->>>>>>> fb77435b3c872294914c476fef3034b9b11aa1f3
      <Compile Include="Assets\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\Water\Water\Scripts\GerstnerDisplace.cs" />
      <Compile Include="Assets\Water\Water\Scripts\MeshContainer.cs" />
