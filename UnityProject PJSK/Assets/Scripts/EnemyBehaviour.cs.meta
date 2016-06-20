@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 6f066622ab32bab47821ea9bcefb2428
-timeCreated: 1463493543
+timeCreated: 1466293486
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hurtParticles: {instanceID: 0}
+  - player: {instanceID: 0}
+  - loot: {fileID: 150124, guid: 44a8b415d13a2b342b1601f838533ace, type: 2}
+  - spawnedLoot: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

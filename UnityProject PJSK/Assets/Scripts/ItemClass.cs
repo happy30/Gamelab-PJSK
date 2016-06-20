@@ -10,8 +10,18 @@ public class ItemClass
     public bool sellable;
     public int buyPrice;
     public int sellPrice;
-    public Texture2D icon;
+    public string itemDescription;
+    public enum Tier
+    {
+        Normal,
+        Rare,
+        Legendary
+    };
 
+    public Tier tier;
+    public Sprite icon;
+
+    //unused constructor
     public ItemClass(int id, string name, bool cons, bool sell, int buyP, int sellP)
     {
         this.itemID = id;

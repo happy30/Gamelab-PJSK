@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Linq;
+using UnityEngine.SceneManagement;  
 
 public class ConversationSystem : MonoBehaviour {
+
+    //Does the NPC keep telling the same thing, does it have a come-back message, does it hand out a quest?
     public enum NPCType
     {
         OneConversation,
@@ -12,28 +14,33 @@ public class ConversationSystem : MonoBehaviour {
 
     public NPCType npcType;
 
+    //communication with other scripts
     public PlayerController player;
     public UIManager ui;
     public InteractScript interact;
     AudioSource sound;
+
+    //npc speech clip
     public AudioClip clip;
 
+    //What is the npcs name and what's he going to say
     public string npcName;
-
     public string[] firstConversation;
     public string[] secondConversation;
     public string[] questDoneConversation;
 
+    //technical stuff
     public string[] fullLines;
-    private string fullDialogueLine;
+    string fullDialogueLine;
     public string displayLine;
 
-    private int currentText;
-    private int currentChar;
+    int currentText;
+    int currentChar;
 
-    private float scrollSpeed;
-    private bool mustClickButton;
+    float scrollSpeed;
+    bool mustClickButton;
 
+    //Quest related
     public InventoryManager inventoryManager;
     public QuestManager quests;
     public int questID;
@@ -57,10 +64,13 @@ public class ConversationSystem : MonoBehaviour {
     {
         if (interact.interacted)
         {
+            //We can quickly escape from a conversation
             if (Input.GetButtonDown("Cancel") && !mustClickButton)
             {
                 DeActivate();
             }
+
+            //Each character will appear on screen one by one, if we click we speed up that process. If all characters are on-screen go to next line
             if (Input.GetButtonDown("Fire1") && !mustClickButton)
             {
                 if (displayLine != fullDialogueLine)
@@ -84,6 +94,7 @@ public class ConversationSystem : MonoBehaviour {
         }
     }
 
+    //Initialize the chat
     public void Activate()
     {
         currentText = 0;
@@ -93,6 +104,7 @@ public class ConversationSystem : MonoBehaviour {
         Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Conversation);
     }
 
+    //End the chat
     public void DeActivate()
     {
         currentText = 0;
@@ -104,15 +116,23 @@ public class ConversationSystem : MonoBehaviour {
         }
         mustClickButton = false;
         ui.questButtons.SetActive(false);
-        Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.HubTown);
+        if (SceneManager.GetActiveScene().name == "happiWorld")
+        {
+            Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.HubTown);
+        }
+        else if (SceneManager.GetActiveScene().name == "Lyndor")
+        {
+            Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Lyndor);
+        }
     }
 
+    //Add a character one by one on screen
     public void NextChar()
     {
         if(currentChar < fullDialogueLine.Length)
         {
             displayLine += fullDialogueLine[currentChar];
-            sound.PlayOneShot(clip, 1);
+            sound.PlayOneShot(clip, 0.7f);
             currentChar++;
         }
     }
@@ -150,23 +170,26 @@ public class ConversationSystem : MonoBehaviour {
         currentText++;
     }
 
+    //OnButtonClick (accepting a quest)
     public void AcceptButton()
     {
         quests.ActivateQuest(questID);
+        ui.MakeQuestEntry(questID);
         firstConversation = secondConversation;
         DeActivate();
     }
 
+    //Complete the quest with this NPC if we have the required quest item
     public bool hasQuestItem()
     {
-        if (inventoryManager.inventory.Any(opt => opt.itemID.Equals(questItemID)))
+        for(int i = 0; i < inventoryManager.inventory.Count; i++)
         {
-            inventoryManager.inventory.Remove(inventoryManager.inventory.Where(x => x.itemID == questItemID).SingleOrDefault());
-            return true;
+            if(inventoryManager.inventory[i].itemID == questItemID)
+            {
+                inventoryManager.inventory.Remove(inventoryManager.inventory[i]);
+                return true;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 }

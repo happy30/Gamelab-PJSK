@@ -31,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingInterface: {fileID: 0}
   xPos: 0
-  fox: {fileID: 0}
+  piggy: {fileID: 0}
+  progressBar: {fileID: 0}
 --- !u!114 &11403326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,66 +73,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase:
-  - itemID: 0
-    itemName: Potion
-    consumable: 1
-    sellable: 1
-    buyPrice: 10
-    sellPrice: 5
+  - itemID: 100
+    itemName: Half eaten piggyfood
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+    itemDescription: n/a
+    tier: 0
+    icon: {fileID: 21300000, guid: 3a8ee764b35b7ed4aae7e6ff1b8d66a5, type: 3}
+  - itemID: 101
+    itemName: Piggyfood
+    consumable: 0
+    sellable: 0
+    buyPrice: 0
+    sellPrice: 0
+    itemDescription: This is delicious food that all piggies love.
+    tier: 0
+    icon: {fileID: 21300000, guid: 3a8ee764b35b7ed4aae7e6ff1b8d66a5, type: 3}
   - itemID: 0
     itemName: 
     consumable: 0
     sellable: 0
     buyPrice: 0
     sellPrice: 0
+    itemDescription: 
+    tier: 0
+    icon: {fileID: 0}
   - itemID: 0
     itemName: 
     consumable: 0
     sellable: 0
     buyPrice: 0
     sellPrice: 0
+    itemDescription: 
+    tier: 0
+    icon: {fileID: 0}
   - itemID: 0
     itemName: 
     consumable: 0
     sellable: 0
     buyPrice: 0
     sellPrice: 0
-  - itemID: 0
-    itemName: 
-    consumable: 0
-    sellable: 0
-    buyPrice: 0
-    sellPrice: 0
-  - itemID: 0
-    itemName: 
-    consumable: 0
-    sellable: 0
-    buyPrice: 0
-    sellPrice: 0
-  - itemID: 0
-    itemName: 
-    consumable: 0
-    sellable: 0
-    buyPrice: 0
-    sellPrice: 0
-  - itemID: 0
-    itemName: 
-    consumable: 0
-    sellable: 0
-    buyPrice: 0
-    sellPrice: 0
-  - itemID: 0
-    itemName: 
-    consumable: 0
-    sellable: 0
-    buyPrice: 0
-    sellPrice: 0
-  - itemID: 0
-    itemName: 
-    consumable: 0
-    sellable: 0
-    buyPrice: 0
-    sellPrice: 0
+    itemDescription: 
+    tier: 0
+    icon: {fileID: 0}
 --- !u!114 &11433480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   weapons: []
-  inventorySize: 0
+  inventorySize: 20
   piggies: 0
 --- !u!114 &11466168
 MonoBehaviour:
@@ -157,7 +144,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbfd05b4902389b49920c1e5f2ab2091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: []
+  quests:
+  - questID: 0
+    questName: Iggy is lost
+    questDescription: Iggy has escaped from his pen. Find some piggyfood to lure him
+      back to his friends.
+    questState: 0
+    piggieReward: 20
+  - questID: 1
+    questName: Iggy is hungry
+    questDescription: Iggy piggy really wants some yummy piggyfood before he is going
+      to listen to you.
+    questState: 0
+    piggieReward: 10
+  - questID: 1
+    questName: Mysterious Pig
+    questDescription: You found a mysterious pig in the forest... It looks like he
+      wants something.
+    questState: 0
+    piggieReward: 10
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
+  - questID: 0
+    questName: 
+    questDescription: 
+    questState: 0
+    piggieReward: 0
   inventory: {fileID: 0}
 --- !u!114 &11479896
 MonoBehaviour:
@@ -170,9 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909c42263c3f2ce479dbbc4520a9a451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
-  attackPower: 0
+  health: 5
+  maxHealth: 5
+  attackPower: 5
   moveSpeedMultiplier: 1
   unlockedCheckpoints: 00000000
   inventory: {fileID: 0}
