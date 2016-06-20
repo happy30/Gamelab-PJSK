@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -107,7 +101,6 @@
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\PiggyBehaviour.cs" />
     <Compile Include="Assets\Scripts\BGMPlayer.cs" />
     <Compile Include="Assets\Scripts\ConversationSystem.cs" />
     <Compile Include="Assets\Scripts\DoorHandler.cs" />
@@ -131,13 +124,14 @@
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PauseMenuManager.cs" />
     <Compile Include="Assets\Scripts\PickUpScript.cs" />
+    <Compile Include="Assets\Scripts\PiggyBehaviour.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawnLocator.cs" />
     <Compile Include="Assets\Scripts\QuestClass.cs" />
     <Compile Include="Assets\Scripts\QuestID.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
     <Compile Include="Assets\Scripts\StatsManager.cs" />
-    <Compile Include="Assets\Scripts\UImanager.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
     <Compile Include="Assets\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Water\Water\Scripts\GerstnerDisplace.cs" />
