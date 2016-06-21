@@ -9,6 +9,7 @@ public class BuyManager : MonoBehaviour {
     public ItemDatabase itemDatabase;
     public UIManager ui;
     public Text yourPiggies;
+    public GameObject weaponPanel;
 
 
     void Start()
@@ -21,6 +22,10 @@ public class BuyManager : MonoBehaviour {
     void Update()
     {
         yourPiggies.text = "Piggies: " + inventory.piggies;
+        if (inventory.weaponsUnlocked[0])
+        {
+            weaponPanel.SetActive(false);
+        }
     }
 	
     public void BuyItem(int itemID)
@@ -52,6 +57,12 @@ public class BuyManager : MonoBehaviour {
 
     public void BuyWeapon (int weaponID)
     {
-        inventory.weaponsUnlocked[weaponID] = true;
+        if(inventory.piggies >= 30)
+        {
+            inventory.weaponsUnlocked[weaponID] = true;
+            inventory.piggies -= 30;
+            ui.UISound.PlayOneShot(ui.weaponUnlockedSound, 1);
+        }
+        
     }
 }

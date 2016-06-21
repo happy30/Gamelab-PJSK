@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour {
     public AudioClip navSound;
     public AudioClip potionSound;
     public AudioClip shopSound;
+    public AudioClip weaponUnlockedSound;
 
     //Pause menu
     public GameObject pauseMenuPanels;

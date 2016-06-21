@@ -5,6 +5,7 @@ public class WeaponController : MonoBehaviour {
 
     public int healthBonus;
     public int attackPowerBonus;
+    public int weaponID;
 
     public StatsManager stats;
 
