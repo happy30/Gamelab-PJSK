@@ -30,6 +30,10 @@ public class InteractScript : MonoBehaviour {
         {
             GetComponent<ConversationSystem>().Activate();
         }
+        if(GetComponent<ShopManager>() != null)
+        {
+            GetComponent<ShopManager>().Activate();
+        }
     }
 
     public void closeInteraction()

@@ -10,20 +10,26 @@ public class EnemyBehaviour : MonoBehaviour
         Idle,
         Attacking
     };
+    public enum HealthState
+    {
+        Normal,
+        Hurt
+    };
 
     float speed;
     public float approachSpeed;
 
     public int attackPower;
     public int health;
+    public int lowHealth;
     public float aggroRange;
     public float attackRange;
 
     public int minPiggyDrop;
     public int maxPiggyDrop;
 
-    int currentWaypoint;
-    public ParticleSystem hurtParticles;
+    public int currentWaypoint;
+    public GameObject hurtParticles;
     float time;
     public float walkTime;
     public float attackTime;
@@ -35,6 +41,8 @@ public class EnemyBehaviour : MonoBehaviour
     int playerHealth;
     NavMeshAgent nav;
     public EnemyState enemyState;
+    public HealthState healthState;
+    public GameObject enemySpawner;
 
     // Use this for initialization
     void Start()
@@ -42,7 +50,9 @@ public class EnemyBehaviour : MonoBehaviour
         playerHealth = GameObject.Find("GameManager").GetComponent<StatsManager>().health;
         player = GameObject.Find("Player");
         currentWaypoint = 0;
-        nav = GetComponent<NavMeshAgent>();
+        nav = gameObject.GetComponent<NavMeshAgent>();
+        healthState = HealthState.Normal;
+        hurtParticles.SetActive(false);
     }
 
     // Update is called once per frame
@@ -84,6 +94,14 @@ public class EnemyBehaviour : MonoBehaviour
             }
             else nav.enabled = true;
         }
+        if (healthState == HealthState.Hurt)
+        {
+            hurtParticles.SetActive (true);
+        }
+        if (health <= lowHealth)
+        {
+            healthState = HealthState.Hurt;
+        }
         if (health <= 0)
         {
             spawnedLoot = (GameObject)Instantiate(loot, transform.position, Quaternion.identity);
@@ -95,7 +113,7 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 //spawnedLoot.GetComponent<PickUpScript>().item = 
             }
-
+            enemySpawner.GetComponent<EnemySpawner>().enemyCount--;
             Destroy(gameObject);
         }
     }
