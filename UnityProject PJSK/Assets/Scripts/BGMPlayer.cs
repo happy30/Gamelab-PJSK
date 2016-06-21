@@ -39,8 +39,12 @@ public class BGMPlayer : MonoBehaviour {
 
     public void changeBGM(CurrentlyPlaying state)
     {
-        fading = true;
-        nextPlaying = state;
+        if(state != nextPlaying)
+        {
+            fading = true;
+            nextPlaying = state;
+        }
+        
     }
 
     public void FadeOut()
