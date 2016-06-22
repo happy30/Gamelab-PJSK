@@ -47,6 +47,7 @@ public class UIManager : MonoBehaviour {
     public AudioClip navSound;
     public AudioClip potionSound;
     public AudioClip shopSound;
+    public AudioClip weaponUnlockedSound;
 
     //Pause menu
     public GameObject pauseMenuPanels;
@@ -150,7 +151,7 @@ public class UIManager : MonoBehaviour {
         }     
     }
 
-    //Open BuyOrSell Panel
+    //Open and close shop
     public void OpenBuyOrSellPanel()
     {
         buyOrSellPanel.SetActive(true);
@@ -165,6 +166,7 @@ public class UIManager : MonoBehaviour {
 
     public void OpenBuyMenu()
     {
+        UISound.PlayOneShot(openMenu, 1);
         buyMenu.SetActive(true);
         buyOrSellPanel.SetActive(false);
     }
@@ -176,15 +178,25 @@ public class UIManager : MonoBehaviour {
         UISound.PlayOneShot(questDenied, 0.8f);
     }
 
-    public void closeSellMenu()
-    {
-        sellMenu.SetActive(false);
-    }
-
     public void OpenSellMenu()
     {
+        UISound.PlayOneShot(openMenu, 1);
         sellMenu.SetActive(true);
-        CancelBuyOrSellPanel();
+        sellMenu.GetComponent<SellManager>().CreateSellMenu();
+        buyOrSellPanel.SetActive(false);
+    }
+
+    public void CloseSellMenu()
+    {
+        sellMenu.GetComponent<SellManager>().sellableItems.Clear();
+        player.interactedObject.closeInteraction();
+        UISound.PlayOneShot(questDenied, 0.8f);
+        GameObject[] sellObjects = GameObject.FindGameObjectsWithTag("SellObject");
+        for(int i = 0; i < sellObjects.Length; i ++)
+        {
+            Destroy(sellObjects[i]);
+        }
+        sellMenu.SetActive(false);
     }
 
     //Transfer the instantiated quests to show in the UI
