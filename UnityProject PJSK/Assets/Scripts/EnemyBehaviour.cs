@@ -33,7 +33,8 @@ public class EnemyBehaviour : MonoBehaviour
     float time;
     public float walkTime;
     public float attackTime;
-    public Transform[] waypoints;
+    public GameObject[] waypoints;
+    public float waypointDistance;
     public GameObject player;
     public GameObject loot;
     public GameObject spawnedLoot;
@@ -59,22 +60,25 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         aggroRange = Vector3.Distance(player.transform.position, transform.position);
-
         if (enemyState == EnemyState.Idle)
         {
             nav.enabled = false;
+            GetComponent<Animator>().SetBool("IsIdle", true);
         }
 
         if (enemyState == EnemyState.Wandering)
         {
-            nav.SetDestination(waypoints[currentWaypoint].position);
+            nav.SetDestination(waypoints[currentWaypoint].transform.position);
             time += Time.deltaTime;
             if (time >= walkTime)
             {
                 currentWaypoint = Random.Range(0, 4);
                 time = 0;
             }
+            GetComponent<Animator>().SetBool("IsWalking", true);
         }
+
+        else GetComponent<Animator>().SetBool("IsWalking", false);
 
         if (enemyState == EnemyState.Attacking)
         {
@@ -82,8 +86,13 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 nav.SetDestination(player.transform.position);
             }
+            if (aggroRange > attackRange)
+            {
+                GetComponent<Animator>().SetBool("Attack", false);
+            }
             if (aggroRange <= attackRange)
             {
+                GetComponent<Animator>().SetBool("Attack", true);
                 nav.enabled = false;
                 time += Time.deltaTime;
                 if (time >= attackTime)
@@ -125,5 +134,10 @@ public class EnemyBehaviour : MonoBehaviour
             player = other.gameObject;
             enemyState = EnemyState.Attacking;
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        enemyState = EnemyState.Wandering;
     }
 }
