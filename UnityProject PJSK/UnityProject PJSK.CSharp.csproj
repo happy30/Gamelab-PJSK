@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\ItemMenu.cs" />
     <Compile Include="Assets\Scripts\ItemSlot.cs" />
     <Compile Include="Assets\Scripts\ItemSlotManager.cs" />
+    <Compile Include="Assets\Scripts\Menus\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\Menus\UIManager.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\CreditsManager.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
