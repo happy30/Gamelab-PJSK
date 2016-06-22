@@ -5,6 +5,8 @@ public class PiggyBehaviour : MonoBehaviour
 {
 
     Animator anim;
+    AudioSource sound;
+    public AudioClip oink;
     public int moveSpeed;
     public Transform[] walkPoints;
     public int walkPointCounter;
@@ -16,6 +18,9 @@ public class PiggyBehaviour : MonoBehaviour
 
     void Start()
     {
+        sound = GetComponent<AudioSource>();
+        sound.clip = oink;
+        sound.spatialBlend = 1f;
         anim = GetComponent<Animator>();
         anim.SetBool("Walking", true);
         moveSpeed = 2;
@@ -39,12 +44,17 @@ public class PiggyBehaviour : MonoBehaviour
             {
                 transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
                 anim.SetBool("Walking", true);
+                sound.Stop();
             }
             
         }
 
         if(idle)
         {
+            if(!sound.isPlaying)
+            {
+                sound.Play();
+            }
             anim.SetBool("Walking", false);
             timer += Time.deltaTime;
             if (timer > idleTime)

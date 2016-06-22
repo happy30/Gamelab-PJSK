@@ -26,9 +26,15 @@ public class PlayerController : MonoBehaviour {
     //fighting
     public GameObject[] weapons;
 
+    //sounds
+    AudioSource sound;
+    public AudioClip walking;
+    public AudioClip running;
+
 	void Start ()
     {
         _rb = GetComponent<Rigidbody>();
+        sound = GetComponent<AudioSource>();
         stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
         ui = GameObject.Find("Canvas").GetComponent<UIManager>();
         inventory = GameObject.Find("GameManager").GetComponent<InventoryManager>();
@@ -59,6 +65,33 @@ public class PlayerController : MonoBehaviour {
         //Change speed to runspeed if Shift is pressed
         speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
         speed *= stats.moveSpeedMultiplier;
+
+        if (movementVelocity.x != 0 || movementVelocity.y != 0)
+        {
+            if (speed == runSpeed)
+            {
+                sound.clip = running;
+            }
+            else
+            {
+                sound.clip = walking;
+            }
+            if(!sound.isPlaying)
+            {
+                sound.Play();
+            }
+            if(speed == runSpeed)
+            {
+
+            }
+            
+        }
+        else
+        {
+            sound.Stop();
+            sound.clip = null;
+            
+        }
 
         //UI bug
         if(ui == null)
@@ -138,6 +171,10 @@ public class PlayerController : MonoBehaviour {
                         _rb.velocity = new Vector3(0, jumpHeight, 0);
                     }
                 }
+            }
+            else
+            {
+                sound.Stop();
             }
         }
         else
