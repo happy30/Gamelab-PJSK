@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scripts\ConversationSystem.cs" />
     <Compile Include="Assets\Scripts\DoorHandler.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\EnemyBoss.cs" />
     <Compile Include="Assets\Scripts\EnemyClass.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\FastTravelSafeManager.cs" />
