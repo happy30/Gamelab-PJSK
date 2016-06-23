@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/SaschaScene.unity
+=======
+- path: Assets/Scenes/Lyndor.unity
+>>>>>>> 4b0cf9ae38d1154efa65fdd1d94acdecf22301f6
   isLoaded: 1
   isActive: 1

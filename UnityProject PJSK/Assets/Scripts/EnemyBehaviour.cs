@@ -30,7 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public int currentWaypoint;
     public GameObject hurtParticles;
-    float time;
+    public float time;
     public float walkTime;
     public float attackTime;
     public GameObject[] waypoints;
@@ -39,7 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject loot;
     public GameObject spawnedLoot;
     public ItemClass questItem;
-    int playerHealth;
+    public int playerHealth;
     NavMeshAgent nav;
     public EnemyState enemyState;
     public HealthState healthState;
@@ -98,6 +98,8 @@ public class EnemyBehaviour : MonoBehaviour
                 if (time >= attackTime)
                 {
                     playerHealth -= attackPower;
+                    print(playerHealth);
+                    print(attackPower);
                     time = 0;
                 }
             }
