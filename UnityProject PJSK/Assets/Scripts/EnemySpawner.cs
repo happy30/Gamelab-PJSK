@@ -21,7 +21,10 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        timer += Time.deltaTime;
+        if(enemyCount < enemyLimit)
+        {
+            timer += Time.deltaTime;
+        }
         if (timer >= spawnTimeAfterDeath && enemyCount < enemyLimit)
         {
             SpawnEnemy ();
@@ -33,7 +36,7 @@ public class EnemySpawner : MonoBehaviour {
     public void SpawnEnemy ()
     {
         spawnedEnemy = (GameObject)Instantiate(enemy, transform.position, Quaternion.identity);
-        spawnedEnemy.GetComponent<EnemyBehaviour>().enemySpawner = gameObject;
+        spawnedEnemy.transform.Find("ENEMY").GetComponent<EnemyBehaviour>().enemySpawner = gameObject;
         spawnTimeAfterDeath = (Random.Range(minSpawnTime, maxSpawnTime));
     }
 }

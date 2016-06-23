@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
     //fighting
     public GameObject[] weapons;
+    public GameObject monster;
 
     //sounds
     AudioSource sound;

@@ -29,6 +29,7 @@ public class EnemyBehaviour : MonoBehaviour
     public int maxPiggyDrop;
 
     public int currentWaypoint;
+    public int newWaypoint;
     public GameObject hurtParticles;
     public float time;
     public float walkTime;
@@ -39,16 +40,16 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject loot;
     public GameObject spawnedLoot;
     public ItemClass questItem;
-    public int playerHealth;
     NavMeshAgent nav;
     public EnemyState enemyState;
     public HealthState healthState;
     public GameObject enemySpawner;
+    public StatsManager stats;
 
     // Use this for initialization
     void Start()
     {
-        playerHealth = GameObject.Find("GameManager").GetComponent<StatsManager>().health;
+        stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
         player = GameObject.Find("Player");
         currentWaypoint = 0;
         nav = gameObject.GetComponent<NavMeshAgent>();
@@ -73,9 +74,20 @@ public class EnemyBehaviour : MonoBehaviour
             if (time >= walkTime)
             {
                 currentWaypoint = Random.Range(0, 4);
+                if(currentWaypoint == newWaypoint)
+                {
+                    GetComponent<Animator>().SetBool("IsIdle", true);
+                    GetComponent<Animator>().SetBool("IsWalking", false);
+                }
+                else
+                {
+                    GetComponent<Animator>().SetBool("IsWalking", true);
+                    GetComponent<Animator>().SetBool("IsIdle", false);
+                }
+                newWaypoint = currentWaypoint;
                 time = 0;
             }
-            GetComponent<Animator>().SetBool("IsWalking", true);
+           
         }
 
         else GetComponent<Animator>().SetBool("IsWalking", false);
@@ -92,22 +104,27 @@ public class EnemyBehaviour : MonoBehaviour
             }
             if (aggroRange <= attackRange)
             {
+                player.GetComponent<PlayerController>().monster = gameObject;
                 GetComponent<Animator>().SetBool("Attack", true);
                 nav.enabled = false;
                 time += Time.deltaTime;
                 if (time >= attackTime)
                 {
-                    playerHealth -= attackPower;
-                    print(playerHealth);
-                    print(attackPower);
                     time = 0;
                 }
             }
-            else nav.enabled = true;
+        }
+        else
+        {
+            if (player.GetComponent<PlayerController>().monster == gameObject)
+            {
+                player.GetComponent<PlayerController>().monster = null;
+            }
+            nav.enabled = true;
         }
         if (healthState == HealthState.Hurt)
         {
-            hurtParticles.SetActive (true);
+            hurtParticles.SetActive(true);
         }
         if (health <= lowHealth)
         {
@@ -115,7 +132,8 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if (health <= 0)
         {
-            spawnedLoot = (GameObject)Instantiate(loot, transform.position, Quaternion.identity);
+            spawnedLoot = (GameObject)Instantiate(loot, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
+            spawnedLoot.GetComponent<Rigidbody>().AddForce(0, 100, 0);
             if (maxPiggyDrop != 0)
             {
                 spawnedLoot.GetComponent<PickUpScript>().piggies = (Random.Range(minPiggyDrop, maxPiggyDrop));
@@ -125,15 +143,22 @@ public class EnemyBehaviour : MonoBehaviour
                 //spawnedLoot.GetComponent<PickUpScript>().item = 
             }
             enemySpawner.GetComponent<EnemySpawner>().enemyCount--;
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
+
     }
+
+    public void HitPlayer(int dmg)
+    {
+        stats.health -= dmg;
+    }
+
+
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            player = other.gameObject;
             enemyState = EnemyState.Attacking;
         }
     }
