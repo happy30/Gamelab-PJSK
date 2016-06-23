@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemy;
-    public GameObject spawnedEnemy;
+    GameObject spawnedEnemy;
     public float timer;
     public float spawnTimeAfterDeath;
     public int enemyCount;
