@@ -43,6 +43,8 @@ public class EnemyBehaviour : MonoBehaviour
     NavMeshAgent nav;
     public EnemyState enemyState;
     public HealthState healthState;
+    public GameObject poof;
+    public GameObject spawnedPoof;
     public GameObject enemySpawner;
     public StatsManager stats;
 
@@ -134,6 +136,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             spawnedLoot = (GameObject)Instantiate(loot, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
             spawnedLoot.GetComponent<Rigidbody>().AddForce(0, 100, 0);
+            spawnedPoof = (GameObject)Instantiate(poof, new Vector3(transform.position.x, transform.position.y + 1.5f, transform.position.z), Quaternion.identity);
             if (maxPiggyDrop != 0)
             {
                 spawnedLoot.GetComponent<PickUpScript>().piggies = (Random.Range(minPiggyDrop, maxPiggyDrop));
@@ -165,6 +168,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        nav.enabled = true;
         enemyState = EnemyState.Wandering;
     }
 }

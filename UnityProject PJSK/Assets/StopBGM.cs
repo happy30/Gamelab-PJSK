@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackMonster : MonoBehaviour {
+public class StopBGM : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

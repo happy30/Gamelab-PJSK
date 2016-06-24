@@ -61,6 +61,9 @@ public class UIManager : MonoBehaviour {
     public GameObject buyMenu;
     public GameObject sellMenu;
 
+    //Death
+    public GameObject deathObject;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -74,6 +77,14 @@ public class UIManager : MonoBehaviour {
             {
                 MakeQuestEntry(i);
             }
+        }
+    }
+
+    void Update()
+    {
+        if(gameManager.GetComponent<StatsManager>().health <= 0)
+        {
+            deathObject.SetActive(true);
         }
     }
 
