@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BGMPlayer : MonoBehaviour {
+public class BGMPlayer : MonoBehaviour
+{
 
     public AudioClip[] BGM;
     public AudioSource sound;
@@ -10,7 +11,7 @@ public class BGMPlayer : MonoBehaviour {
 
     public bool fading;
 
-	public enum CurrentlyPlaying
+    public enum CurrentlyPlaying
     {
         HubTown,
         Field,
@@ -19,7 +20,8 @@ public class BGMPlayer : MonoBehaviour {
         Castle,
         FinalBattle,
         Lyndor,
-        Conversation
+        Conversation,
+        Battle
     };
 
     public CurrentlyPlaying currentlyPlaying;
@@ -33,11 +35,11 @@ public class BGMPlayer : MonoBehaviour {
 
     void Update()
     {
-        if(fading)
+        if (fading)
         {
             FadeOut();
         }
-        if(stats.health <= 0)
+        if (stats.health <= 0)
         {
             sound.volume -= 2f * Time.deltaTime;
         }
@@ -45,18 +47,18 @@ public class BGMPlayer : MonoBehaviour {
 
     public void changeBGM(CurrentlyPlaying state)
     {
-        if(state != nextPlaying)
+        if (state != nextPlaying)
         {
             fading = true;
             nextPlaying = state;
         }
-        
+
     }
 
     public void FadeOut()
     {
         sound.volume -= 2f * Time.deltaTime;
-        if(sound.volume < 0.1f)
+        if (sound.volume < 0.1f)
         {
             sound.clip = BGM[(int)nextPlaying];
             sound.volume = audioVolume;

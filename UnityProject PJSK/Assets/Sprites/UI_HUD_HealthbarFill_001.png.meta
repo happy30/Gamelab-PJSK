@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: 2a7120b03e9f281408ffd81703b5e5ab
+timeCreated: 1466792828
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UI_HUD_HealthbarFill_001_0
+    21300002: UI_HUD_HealthbarFill_001_1
+    21300004: UI_HUD_HealthbarFill_001_2
+    21300006: UI_HUD_HealthbarFill_001_3
+    21300008: UI_HUD_HealthbarFill_001_4
+    21300010: UI_HUD_HealthbarFill_001_5
+    21300012: UI_HUD_HealthbarFill_001_6
+    21300014: UI_HUD_HealthbarFill_001_7
+    21300016: UI_HUD_HealthbarFill_001_8
+    21300018: UI_HUD_HealthbarFill_001_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UI_HUD_HealthbarFill_001_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 94, y: 34.5}
+        - {x: 87, y: 60.5}
+        - {x: 74, y: 76.5}
+        - {x: -97, y: 76.5}
+        - {x: -97, y: -37.5}
+        - {x: -75, y: -80.5}
+        - {x: 15, y: -80.5}
+        - {x: 61, y: -47.5}
+        - {x: 91, y: -10.5}
+        - {x: 94, y: 0.5}
+      - - {x: -98, y: 80.5}
+        - {x: -98, y: 77.5}
+        - {x: 98, y: 77.5}
+        - {x: 98, y: 80.5}
+    - name: UI_HUD_HealthbarFill_001_3
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 94, y: 34.5}
+        - {x: 87, y: 60.5}
+        - {x: 74, y: 76.5}
+        - {x: -97, y: 76.5}
+        - {x: -97, y: -37.5}
+        - {x: -75, y: -80.5}
+        - {x: 15, y: -80.5}
+        - {x: 61, y: -47.5}
+        - {x: 91, y: -10.5}
+        - {x: 94, y: 0.5}
+      - - {x: -98, y: 80.5}
+        - {x: -98, y: 77.5}
+        - {x: 98, y: 77.5}
+        - {x: 98, y: 80.5}
+    - name: UI_HUD_HealthbarFill_001_4
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_5
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_6
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_7
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_8
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    - name: UI_HUD_HealthbarFill_001_9
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 0
+        width: 196
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 77.5}
+        - {x: 32, y: 77.5}
+        - {x: 18, y: 73.5}
+        - {x: -2, y: 77.5}
+        - {x: -84, y: 77.5}
+        - {x: -97, y: 47.5}
+        - {x: -97, y: -19.5}
+        - {x: -78, y: -47.5}
+        - {x: -22, y: -79.5}
+        - {x: 32, y: -79.5}
+        - {x: 94, y: -22.5}
+        - {x: 94, y: 66.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
