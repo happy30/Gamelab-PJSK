@@ -26,6 +26,7 @@ public class EnemyBoss : MonoBehaviour {
     public float attackRange;
     public int currentWaypoint;
     public GameObject hurtParticles;
+    public GameObject hand;
     public GameObject player;
     public GameObject[] waypoints;
     public GameObject shot;
@@ -76,7 +77,7 @@ public class EnemyBoss : MonoBehaviour {
                 walkTime += Time.deltaTime;
                 if (time >= attackTime)
                 {
-                    newShot = (GameObject)Instantiate(shot, transform.position, Quaternion.identity);
+                    newShot = (GameObject)Instantiate(shot, hand.transform.position, Quaternion.identity);
                     time = 0;
                 }
 
