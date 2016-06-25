@@ -21,12 +21,24 @@ public class PlayerController : MonoBehaviour {
     public UIManager ui;
     public ConversationSystem conversation;
     public InteractScript interactedObject;
+    public InventoryManager inventory;
+
+    //fighting
+    public GameObject[] weapons;
+    public GameObject monster;
+
+    //sounds
+    AudioSource sound;
+    public AudioClip walking;
+    public AudioClip running;
 
 	void Start ()
     {
         _rb = GetComponent<Rigidbody>();
+        sound = GetComponent<AudioSource>();
         stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
         ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        inventory = GameObject.Find("GameManager").GetComponent<InventoryManager>();
 	}
 	
     void FixedUpdate()
@@ -55,6 +67,33 @@ public class PlayerController : MonoBehaviour {
         speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
         speed *= stats.moveSpeedMultiplier;
 
+        if (movementVelocity.x != 0 || movementVelocity.y != 0)
+        {
+            if (speed == runSpeed)
+            {
+                sound.clip = running;
+            }
+            else
+            {
+                sound.clip = walking;
+            }
+            if(!sound.isPlaying)
+            {
+                sound.Play();
+            }
+            if(speed == runSpeed)
+            {
+
+            }
+            
+        }
+        else
+        {
+            sound.Stop();
+            sound.clip = null;
+            
+        }
+
         //UI bug
         if(ui == null)
         {
@@ -64,6 +103,36 @@ public class PlayerController : MonoBehaviour {
         //Can only move when we are not in a conversation
         if (!inConversation)
         {
+            if(Input.GetKey("2"))
+            {
+                EquipWeapon(0);
+            }
+            if (Input.GetKey("3"))
+            {
+                EquipWeapon(1);
+            }
+            if (Input.GetKey("4"))
+            {
+                EquipWeapon(2);
+            }
+            if (Input.GetKey("5"))
+            {
+                EquipWeapon(3);
+            }
+            if(Input.GetKey("1"))
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    if (weapons[i] != null)
+                    {
+                        weapons[i].SetActive(false);
+                    }
+                }
+            }
+
+
+
+
             //Check for interactable object
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 5))
             {
@@ -103,6 +172,10 @@ public class PlayerController : MonoBehaviour {
                         _rb.velocity = new Vector3(0, jumpHeight, 0);
                     }
                 }
+            }
+            else
+            {
+                sound.Stop();
             }
         }
         else
@@ -150,5 +223,21 @@ public class PlayerController : MonoBehaviour {
         {
             return null;
         }
+    }
+
+    public void EquipWeapon(int weaponID)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if(weapons[i] != null)
+            {
+                weapons[i].SetActive(false);
+            }
+        }
+        if(inventory.weaponsUnlocked[weaponID])
+        {
+            weapons[weaponID].SetActive(true);
+        }
+        
     }
 }
