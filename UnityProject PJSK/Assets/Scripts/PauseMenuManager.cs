@@ -83,8 +83,26 @@ public class PauseMenuManager : MonoBehaviour
         maxHPText.text = "Max Health: " + stats.maxHealth;
         AttackPowerText.text = "Attack Power: " + stats.attackPower;
         piggies.text = "Piggies: " + inventory.piggies;
+        questsCompletedText.text = GetCompletedQuests() + "/6 Quests Completed";
+        
+        if(inventory.weaponsUnlocked[0])
+        {
+            daggerIcon.SetActive(true);
+        }
+        if (inventory.weaponsUnlocked[1])
+        {
+            absolusIcon.SetActive(true);
+        }
+        if (inventory.weaponsUnlocked[2])
+        {
+            hammerIcon.SetActive(true);
+        }
+        if (inventory.weaponsUnlocked[3])
+        {
+            swordIcon.SetActive(true);
+        }
 
-        if(SceneManager.GetActiveScene().name == "happiWorld")
+        if (SceneManager.GetActiveScene().name == "happiWorld")
         {
             worldMap.SetActive(true);
             lyndorMap.SetActive(false);
@@ -168,7 +186,18 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-
+    public int GetCompletedQuests()
+    {
+        int completedQuests = 0;
+        for (int i = 0; i < quests.quests.Length; i++)
+        {
+            if (quests.quests[i].questState == QuestClass.QuestState.Completed)
+            {
+                completedQuests++;
+            }
+        }
+        return completedQuests;
+    }
     public void LeftArrow()
     {
         if((int)menuState > 0)
