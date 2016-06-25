@@ -13,6 +13,14 @@ public class SellPanelScript : MonoBehaviour {
         inventory = GameObject.Find("GameManager").GetComponent<InventoryManager>();
     }
 
+    void Update()
+    {
+        if(transform.Find("SellItemSlot").Find("SellItem") != null)
+        {
+            transform.Find("SellItemSlot").Find("SellItem").gameObject.SetActive(false);
+        }
+    }
+
 	public void SellThis()
     {
         for (int i = 0; i < inventory.inventory.Count; i++)

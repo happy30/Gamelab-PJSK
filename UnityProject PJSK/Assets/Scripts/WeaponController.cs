@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour {
 
     public StatsManager stats;
     public PlayerController player;
+    public UIManager ui;
 
     //Once this weapon is activated, add stats permanently (WIP)
     void Start()
@@ -17,6 +18,7 @@ public class WeaponController : MonoBehaviour {
         stats.maxHealth += healthBonus;
         stats.attackPower += attackPowerBonus;
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 	
 	// Update is called once per frame
@@ -41,6 +43,12 @@ public class WeaponController : MonoBehaviour {
         if(player.monster != null)
         {
             player.monster.GetComponent<EnemyBehaviour>().health -= attackPower;
+            ui.UISound.PlayOneShot(ui.weaponHit, 1);
         }
+    }
+
+    public void SwingWeapon()
+    {
+        ui.UISound.PlayOneShot(ui.weaponSwing, 1);
     }
 }

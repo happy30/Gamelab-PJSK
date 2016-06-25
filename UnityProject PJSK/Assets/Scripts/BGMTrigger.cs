@@ -23,7 +23,19 @@ public class BGMTrigger : MonoBehaviour {
         if(col.gameObject.tag == "Player")
         {
             if (sound == SoundToChangeTo.Castle)
+            {
                 Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Castle);
+                Camera.main.GetComponent<ToggleCameraEffects>().EnterForest(false);
+                GameObject[] trees = GameObject.FindGameObjectsWithTag("TempleTree");
+                {
+                    for (int i = 0; i < trees.Length; i++)
+                    {
+                        trees[i].GetComponent<ParticleSystem>().enableEmission = false;
+                    }
+
+                }
+            }
+                
             if (sound == SoundToChangeTo.Conversation)
                 Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Conversation);
             if (sound == SoundToChangeTo.Field)
