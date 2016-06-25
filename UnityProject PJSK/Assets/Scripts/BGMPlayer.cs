@@ -5,6 +5,7 @@ public class BGMPlayer : MonoBehaviour {
 
     public AudioClip[] BGM;
     public AudioSource sound;
+    public StatsManager stats;
     public float audioVolume;
 
     public bool fading;
@@ -27,6 +28,7 @@ public class BGMPlayer : MonoBehaviour {
     void Start()
     {
         sound = GetComponent<AudioSource>();
+        stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
     }
 
     void Update()
@@ -35,12 +37,20 @@ public class BGMPlayer : MonoBehaviour {
         {
             FadeOut();
         }
+        if(stats.health <= 0)
+        {
+            sound.volume -= 2f * Time.deltaTime;
+        }
     }
 
     public void changeBGM(CurrentlyPlaying state)
     {
-        fading = true;
-        nextPlaying = state;
+        if(state != nextPlaying)
+        {
+            fading = true;
+            nextPlaying = state;
+        }
+        
     }
 
     public void FadeOut()

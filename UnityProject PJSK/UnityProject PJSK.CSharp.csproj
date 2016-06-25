@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AmbSoundScript.cs" />
+    <Compile Include="Assets\BGMTrigger.cs" />
+    <Compile Include="Assets\DeathScript.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -96,16 +99,20 @@
     <Compile Include="Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
+    <Compile Include="Assets\Effects\ImageEffects\Scripts\ToggleCameraEffects.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\ParticleRenderScript.cs" />
+    <Compile Include="Assets\RotateScript.cs" />
     <Compile Include="Assets\Scripts\BGMPlayer.cs" />
     <Compile Include="Assets\Scripts\BuyManager.cs" />
     <Compile Include="Assets\Scripts\ConversationSystem.cs" />
     <Compile Include="Assets\Scripts\DoorHandler.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\EnemyBoss.cs" />
     <Compile Include="Assets\Scripts\EnemyClass.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\FastTravelSafeManager.cs" />
@@ -117,6 +124,7 @@
     <Compile Include="Assets\Scripts\ItemMenu.cs" />
     <Compile Include="Assets\Scripts\ItemSlot.cs" />
     <Compile Include="Assets\Scripts\ItemSlotManager.cs" />
+    <Compile Include="Assets\Scripts\Menus\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\Menus\UIManager.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\CreditsManager.cs" />
     <Compile Include="Assets\Scripts\Miscellaneous\DontDestroyOnLoad.cs" />
@@ -132,9 +140,13 @@
     <Compile Include="Assets\Scripts\QuestClass.cs" />
     <Compile Include="Assets\Scripts\QuestID.cs" />
     <Compile Include="Assets\Scripts\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\SellManager.cs" />
+    <Compile Include="Assets\Scripts\SellPanelScript.cs" />
     <Compile Include="Assets\Scripts\ShopManager.cs" />
+    <Compile Include="Assets\Scripts\ShotScript.cs" />
     <Compile Include="Assets\Scripts\StatsManager.cs" />
     <Compile Include="Assets\Scripts\WeaponController.cs" />
+    <Compile Include="Assets\StopBGM.cs" />
     <Compile Include="Assets\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Water\Water\Scripts\GerstnerDisplace.cs" />
     <Compile Include="Assets\Water\Water\Scripts\MeshContainer.cs" />
