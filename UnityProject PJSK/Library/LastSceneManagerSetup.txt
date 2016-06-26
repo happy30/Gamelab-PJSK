@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/happiWorld.unity
+=======
+- path: Assets/Scenes/Lyndor.unity
+>>>>>>> ceab3814e05f203140491206a62dd3242db7b173
   isLoaded: 1
   isActive: 1

@@ -44,7 +44,7 @@ public class BuyManager : MonoBehaviour {
                     }
                     else
                     {
-                        ui.UISound.PlayOneShot(ui.closeMenu, 1);
+                       // ui.UISound.PlayOneShot(ui.closeMenu, 1);
                     }
                 }
                 else

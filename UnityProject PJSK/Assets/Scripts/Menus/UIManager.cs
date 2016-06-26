@@ -48,6 +48,9 @@ public class UIManager : MonoBehaviour {
     public AudioClip potionSound;
     public AudioClip shopSound;
     public AudioClip weaponUnlockedSound;
+    public AudioClip weaponSwing;
+    public AudioClip weaponHit;
+    public AudioClip poof;
 
     //Pause menu
     public GameObject pauseMenuPanels;
@@ -63,6 +66,14 @@ public class UIManager : MonoBehaviour {
 
     //Death
     public GameObject deathObject;
+
+    //HUD
+    public Slider healthBar;
+    public GameObject playerHit;
+    public GameObject daggerHud;
+    public GameObject absolusHud;
+    public GameObject hammerHud;
+    public GameObject swordHud;
 
     void Start()
     {
@@ -86,6 +97,34 @@ public class UIManager : MonoBehaviour {
         {
             deathObject.SetActive(true);
         }
+
+        healthBar.value = gameManager.GetComponent<StatsManager>().health;
+
+        if(gameManager.GetComponent<InventoryManager>().weaponsUnlocked[0])
+        {
+            daggerHud.SetActive(true);
+        }
+        if (gameManager.GetComponent<InventoryManager>().weaponsUnlocked[1])
+        {
+            absolusHud.SetActive(true);
+        }
+        if (gameManager.GetComponent<InventoryManager>().weaponsUnlocked[2])
+        {
+            hammerHud.SetActive(true);
+        }
+        if (gameManager.GetComponent<InventoryManager>().weaponsUnlocked[3])
+        {
+            swordHud.SetActive(true);
+        }
+    }
+
+    public void PlayerGetHit()
+    {
+        if(playerHit.activeSelf)
+        {
+            playerHit.SetActive(false);
+        }
+        playerHit.SetActive(true);
     }
 
     //Set the text in the chatpanel
