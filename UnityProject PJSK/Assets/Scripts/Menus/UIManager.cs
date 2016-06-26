@@ -70,6 +70,10 @@ public class UIManager : MonoBehaviour {
     //HUD
     public Slider healthBar;
     public GameObject playerHit;
+    public GameObject daggerHud;
+    public GameObject absolusHud;
+    public GameObject hammerHud;
+    public GameObject swordHud;
 
     void Start()
     {
@@ -95,6 +99,23 @@ public class UIManager : MonoBehaviour {
         }
 
         healthBar.value = gameManager.GetComponent<StatsManager>().health;
+
+        if(gameManager.GetComponent<InventoryManager>().weaponsUnlocked[0])
+        {
+            daggerHud.SetActive(true);
+        }
+        if (gameManager.GetComponent<InventoryManager>().weaponsUnlocked[1])
+        {
+            absolusHud.SetActive(true);
+        }
+        if (gameManager.GetComponent<InventoryManager>().weaponsUnlocked[2])
+        {
+            hammerHud.SetActive(true);
+        }
+        if (gameManager.GetComponent<InventoryManager>().weaponsUnlocked[3])
+        {
+            swordHud.SetActive(true);
+        }
     }
 
     public void PlayerGetHit()
