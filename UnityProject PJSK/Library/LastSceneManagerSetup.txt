@@ -1,16 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/happiWorld.unity
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/World.unity
-=======
-- path: Assets/Scenes/Lyndor.unity
->>>>>>> ceab3814e05f203140491206a62dd3242db7b173
-=======
-- path: Assets/Scenes/SaschaScene.unity
->>>>>>> 7c887bf8e40f61640b665e03af1ec901fa2af979
->>>>>>> 3c2970b7775a7bbaff3e17c3725a5fff0a6edfaf
   isLoaded: 1
   isActive: 1
