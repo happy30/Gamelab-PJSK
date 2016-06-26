@@ -49,8 +49,10 @@ public class UIManager : MonoBehaviour {
     public AudioClip shopSound;
     public AudioClip weaponUnlockedSound;
     public AudioClip weaponSwing;
+    public AudioClip weaponSwing2;
     public AudioClip weaponHit;
     public AudioClip poof;
+    public AudioClip[] playerHitSound;
 
     //Pause menu
     public GameObject pauseMenuPanels;
@@ -120,7 +122,16 @@ public class UIManager : MonoBehaviour {
 
     public void PlayerGetHit()
     {
-        if(playerHit.activeSelf)
+        if (Random.value < .5f)
+        {
+            UISound.PlayOneShot(playerHitSound[0]);
+        }
+        else
+        {
+            UISound.PlayOneShot(playerHitSound[0]);
+        }
+
+        if (playerHit.activeSelf)
         {
             playerHit.SetActive(false);
         }

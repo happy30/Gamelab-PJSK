@@ -10,6 +10,7 @@ public class WeaponController : MonoBehaviour {
     public StatsManager stats;
     public PlayerController player;
     public UIManager ui;
+    public AudioClip swingSound;
 
     //Once this weapon is activated, add stats permanently (WIP)
     void Start()
@@ -49,6 +50,6 @@ public class WeaponController : MonoBehaviour {
 
     public void SwingWeapon()
     {
-        ui.UISound.PlayOneShot(ui.weaponSwing, 1);
+        ui.UISound.PlayOneShot(swingSound, 1);
     }
 }

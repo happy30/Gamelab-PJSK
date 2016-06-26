@@ -218,7 +218,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        nav.enabled = true;
-        enemyState = EnemyState.Wandering;
+        if (other.tag == "Player")
+        {
+            nav.enabled = true;
+            enemyState = EnemyState.Wandering;
+        }
     }
 }

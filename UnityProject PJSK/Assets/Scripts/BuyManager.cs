@@ -10,6 +10,12 @@ public class BuyManager : MonoBehaviour {
     public UIManager ui;
     public Text yourPiggies;
     public GameObject weaponPanel;
+    public enum ShopLocation
+    {
+        HubTown,
+        Lyndor
+    };
+    public ShopLocation shopLocation;
 
 
     void Start()
@@ -22,9 +28,19 @@ public class BuyManager : MonoBehaviour {
     void Update()
     {
         yourPiggies.text = "Piggies: " + inventory.piggies;
-        if (inventory.weaponsUnlocked[0])
+        if (shopLocation == ShopLocation.HubTown)
         {
-            weaponPanel.SetActive(false);
+            if (inventory.weaponsUnlocked[0])
+            {
+                weaponPanel.SetActive(false);
+            }
+        }
+        else if(shopLocation == ShopLocation.Lyndor)
+        {
+            if (inventory.weaponsUnlocked[2])
+            {
+                weaponPanel.SetActive(false);
+            }
         }
     }
 	
@@ -44,7 +60,7 @@ public class BuyManager : MonoBehaviour {
                     }
                     else
                     {
-                       // ui.UISound.PlayOneShot(ui.closeMenu, 1);
+                       ui.UISound.PlayOneShot(ui.closeMenu, 1);
                     }
                 }
                 else
@@ -57,11 +73,23 @@ public class BuyManager : MonoBehaviour {
 
     public void BuyWeapon (int weaponID)
     {
-        if(inventory.piggies >= 30)
+        if (weaponID == 0)
         {
-            inventory.weaponsUnlocked[weaponID] = true;
-            inventory.piggies -= 30;
-            ui.UISound.PlayOneShot(ui.weaponUnlockedSound, 1);
+            if (inventory.piggies >= 30)
+            {
+                inventory.weaponsUnlocked[weaponID] = true;
+                inventory.piggies -= 30;
+                ui.UISound.PlayOneShot(ui.weaponUnlockedSound, 1);
+            }
+        }
+        else if(weaponID == 2)
+        {
+            if(inventory.piggies >= 950)
+            {
+                inventory.weaponsUnlocked[weaponID] = true;
+                inventory.piggies -= 950;
+                ui.UISound.PlayOneShot(ui.weaponUnlockedSound, 1);
+            }
         }
         
     }
