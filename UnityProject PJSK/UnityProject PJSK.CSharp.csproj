@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CastleEntrance.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\EnterCastle.cs" />
     <Compile Include="Assets\Scripts\AmbSoundScript.cs" />
     <Compile Include="Assets\Scripts\BGMPlayer.cs" />
     <Compile Include="Assets\Scripts\BGMTrigger.cs" />
@@ -156,6 +158,8 @@
     <Compile Include="Assets\Water\Water\Scripts\Water.cs" />
     <Compile Include="Assets\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Water\Water\Scripts\WaterTile.cs" />
+    <Compile Include="Assets\WeaponPickUp.cs" />
+    <Compile Include="Assets\WeaponUnlockScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

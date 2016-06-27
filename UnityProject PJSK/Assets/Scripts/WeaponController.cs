@@ -43,7 +43,15 @@ public class WeaponController : MonoBehaviour {
     {
         if(player.monster != null)
         {
-            player.monster.GetComponent<EnemyBehaviour>().health -= attackPower;
+            if(player.monster.GetComponent<EnemyBehaviour>() != null)
+            {
+                player.monster.GetComponent<EnemyBehaviour>().health -= attackPower;
+            }
+            else if (player.monster.GetComponent<EnemyBoss>() != null)
+            {
+                player.monster.GetComponent<EnemyBoss>().health -= attackPower;
+            }
+           
             ui.UISound.PlayOneShot(ui.weaponHit, 1);
         }
     }

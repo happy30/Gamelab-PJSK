@@ -53,6 +53,8 @@ public class UIManager : MonoBehaviour {
     public AudioClip weaponHit;
     public AudioClip poof;
     public AudioClip[] playerHitSound;
+    public AudioClip bossShot;
+    public AudioClip thunderPoof;
 
     //Pause menu
     public GameObject pauseMenuPanels;

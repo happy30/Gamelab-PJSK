@@ -33,20 +33,34 @@ public class EnemyBoss : MonoBehaviour {
     GameObject newShot;
     public EnemyState enemyState;
     public HealthState healthState;
+    public StatsManager stats;
+    public UIManager ui;
     int playerHealth;
+    public float dist;
+    public GameObject absolusPickUp;
+    public GameObject poof;
+    public GameObject spawnedPoof;
+    AudioSource sound;
+    public AudioClip bossShot;
 
     // Use this for initialization
     void Start ()
     {
-        playerHealth = GameObject.Find("GameManager").GetComponent<StatsManager>().health;
+        stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
+        ui = GameObject.Find("Canvas").GetComponent<UIManager>();
         player = GameObject.Find("Player");
         healthState = HealthState.Normal;
         hurtParticles.SetActive(false);
         currentWaypoint = 0;
+        sound = GetComponent<AudioSource>();
+        if(GameObject.Find("GameManager").GetComponent<InventoryManager>().weaponsUnlocked[1])
+        {
+            Destroy(gameObject);
+        }
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         aggroRange = Vector3.Distance(player.transform.position, transform.position);
         if (waypoints == null)
@@ -61,7 +75,7 @@ public class EnemyBoss : MonoBehaviour {
 
         if (enemyState == EnemyState.Attacking)
         {
-            
+
             if (aggroRange > attackRange)
             {
                 GetComponent<Animator>().SetBool("IsIdle", true);
@@ -71,13 +85,24 @@ public class EnemyBoss : MonoBehaviour {
             if (aggroRange <= attackRange)
             {
                 transform.LookAt(player.transform);
+                Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Battle);
+                dist = Vector3.Distance(transform.position, player.transform.position);
+                if (dist < 6)
+                {
+                    player.GetComponent<PlayerController>().monster = gameObject;
+                }
+                else
+                {
+                    player.GetComponent<PlayerController>().monster = null;
+                }
+
                 GetComponent<Animator>().SetBool("IsIdle", false);
                 GetComponent<Animator>().SetBool("Attack", true);
                 time += Time.deltaTime;
                 walkTime += Time.deltaTime;
                 if (time >= attackTime)
                 {
-                    newShot = (GameObject)Instantiate(shot, hand.transform.position, Quaternion.identity);
+                    
                     time = 0;
                 }
 
@@ -88,6 +113,22 @@ public class EnemyBoss : MonoBehaviour {
                     walkTime = 0;
                 }
             }
+        }
+        if (healthState == HealthState.Hurt)
+        {
+            hurtParticles.SetActive(true);
+        }
+        if (health <= lowHealth)
+        {
+            healthState = HealthState.Hurt;
+        }
+        if (health <= 0)
+        {
+            Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Temple);
+            absolusPickUp.SetActive(true);
+            spawnedPoof = (GameObject)Instantiate(poof, new Vector3(transform.position.x, transform.position.y + 6, transform.position.z), Quaternion.identity);
+            ui.UISound.PlayOneShot(ui.thunderPoof, 0.5f);
+            Destroy(gameObject);
         }
     }
 
@@ -104,5 +145,20 @@ public class EnemyBoss : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         enemyState = EnemyState.Idle;
+        if(other.gameObject.tag == "Player")
+        {
+            Camera.main.GetComponent<BGMPlayer>().changeBGM(BGMPlayer.CurrentlyPlaying.Temple);
+        }
+    }
+
+    public void FireShot()
+    {
+        newShot = (GameObject)Instantiate(shot, hand.transform.position, Quaternion.identity);
+        sound.PlayOneShot(bossShot, 1f);
+    }
+
+    public void HitPlayer(int dmg)
+    {
+
     }
 }
