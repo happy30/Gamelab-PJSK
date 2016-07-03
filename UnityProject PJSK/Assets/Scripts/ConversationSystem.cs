@@ -132,7 +132,7 @@ public class ConversationSystem : MonoBehaviour {
         if(currentChar < fullDialogueLine.Length)
         {
             displayLine += fullDialogueLine[currentChar];
-            sound.PlayOneShot(clip, 0.7f);
+            sound.PlayOneShot(clip, 0.4f);
             currentChar++;
         }
     }
